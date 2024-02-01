@@ -1,0 +1,665 @@
+Return-Path: <pm_bounces@pm-bounces.rentablo.de>
+Delivered-To: exampleuser
+Received: from 21d123d3d079
+	by 21d123d3d079 (Dovecot) with LMTP id CGp7Begc9WGhAgAAZPvwMw
+	for <exampleuser>; Sat, 29 Jan 2022 10:54:32 +0000
+Return-Path: pm_bounces@pm-bounces.rentablo.de
+Delivered-To: recipient@example.com
+Received: from mta198a-ord.mtasv.net (mta198a-ord.mtasv.net [104.245.209.198])
+	by example.com (OpenSMTPD) with ESMTPS id aef3e026 (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO)
+	for <recipient@example.com>;
+	Sat, 29 Jan 2022 10:54:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=pm; d=pm.mtasv.net;
+ h=From:Date:Subject:Message-Id:Reply-To:To:MIME-Version:Content-Type;
+ bh=691C4dAjxJ4IxiDNRUb9ldZ21vo=;
+ b=zg7kaNPgt3mnk1ot2rfSyGnGRG5KFWQ7p0kYW92WxuzchmuhM0MdMu9aEu40AZLWh0xWg8rL2ehH
+   POIVkKPSupMAUDe5nYykOvqv1M/rvgjfn5NoYMq4v/e3yUJUT+A77GCqk+d9RtNm4ekcDdrivbDP
+   /ssJFBnybIS1bhiISI0=
+Received: by mta198a-ord.mtasv.net id hukeee27tk4t for <recipient@example.com>; Sat, 29 Jan 2022 05:54:30 -0500 (envelope-from <pm_bounces@pm-bounces.rentablo.de>)
+X-PM-IP: 104.245.209.198
+X-IADB-IP: 104.245.209.198
+X-IADB-IP-REVERSE: 198.209.245.104
+DKIM-Signature: v=1; a=rsa-sha256; d=rentablo.de; s=20170812201048pm;
+	c=relaxed/relaxed; i=noreply@rentablo.de; t=1643453670;
+	h=cc:content-transfer-encoding:content-type:date:from:in-reply-to:
+	list-archive:list-help:list-id:list-owner:list-post:list-subscribe:
+	list-unsubscribe:mime-version:message-id:references:reply-to:resent-cc:
+	resent-date:resent-from:resent-message-id:resent-sender:resent-to:sender:
+	subject:to:feedback-id;
+	bh=x3kUae+kMlKPf93hZgOTDcPrR6ar7MvSM473KdcF358=;
+	b=jgO3zbyFw+cSJ3VaJTQuIAiwoXgB2E4lc7hLz3RVBNc9Jatm3I3HXpyBxrhg1gEsZx/0ob5iRy6
+	na8KYwo4D85khsd86kmlbX4tm2kSuU+szdLld3YasBk0W50A0yzi5OZgnHPc4DxdMCNFx0VjvVoqW
+	lTF59IDeJzVLdnqkdcc=
+From: Rentablo GmbH <noreply@rentablo.de>
+Date: Sat, 29 Jan 2022 10:54:30 +0000
+Subject: Ihr Rentablo Investment-Report
+Message-Id: <6775c63a-fd73-42ec-87ef-b54cae6a653a@mtasv.net>
+Reply-To: noreply@rentablo.de
+To: recipient@example.com
+Feedback-ID: s3199639-_:s3199639:a145192:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-PM-Message-Id: 6775c63a-fd73-42ec-87ef-b54cae6a653a
+X-PM-RCPT: |bTB8MTQ1MTkyfDMxOTk2Mzl8cmVudGFibG9AeHJzdGYuZGU=|
+X-PM-Message-Options: v1;9Hcc_PIAriBnYBOfaIwCcyIPcaJJ4QcTBG0Vjf0upsKfpR9qOJtFHrXwPywaBTAW0yivONdmCE8g_Gy1UcqUBBDOwW7mU_BYoMQKRhXnXR0
+MIME-Version: 1.0
+X-PM-MTA-Pool: transactional-2
+Content-Type: multipart/alternative;
+	boundary=mk3-cc3aa0647ba844c2971d870191d6426f; charset=UTF-8
+
+--mk3-cc3aa0647ba844c2971d870191d6426f
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Ihr Rentablo Investment-Report
+
+Lieber Max Muster,=20
+
+
+Anbei erhalten Sie Ihren w=C3=B6chentlichen Investment Report.=20
+
+Aktuelles von Rentablo
+
+
+Die Zinswende naht: Was das f=C3=BCr (Fonds-)Sparer bedeutet=20
+<https://blog.rentablo.de/zinswende/>=20
+
+
+Die Inflation in Europa und den USA ist da, nun sind h=C3=B6here (Leit=
+-)Zinsen und=20
+damit die Zinswende absehbar. Wie wird sich das f=C3=BCr (Fonds-)Spare=
+r auswirken?=20
+Wir geben einen =C3=9Cberblick, welche positive wie negative Folgen ei=
+ne Zinswende=20
+f=C3=BCr Anleger haben kann.
+
+
+Ver=C3=A4nderung Depotwert
+=E2=80=A2 0,05=C2=A0% seit 7 Tagen=20
+=E2=80=A2 -7,62=C2=A0% seit einem Monat=20
+
+Ihre Investment-Performance
+Performance: Wertentwicklung Ihrer Depots; Peer Group: Nutzer mit mitt=
+lerer
+Risiko-Neigung.=20
+
+Seit 6 Monaten:=20
+Sie: 0,9=C2=A0%=20
+Peers: 1,0=C2=A0%=20
+DAX: -1,7=C2=A0%=20
+
+
+Seit Jahresanfang (YTD):=20
+Sie: -7,7=C2=A0%=20
+Peers: -5,7=C2=A0%=20
+DAX: -3,6=C2=A0%=20
+
+
+Seit 12 Monaten:=20
+Sie: 17,1=C2=A0%=20
+Peers: 13,8=C2=A0%=20
+DAX: 14,2=C2=A0%=20
+
+
+
+
+Risiko-Einsch=C3=A4tzung
+Mittleres Risiko=20
+Hohe gegenseitige Abh=C3=A4ngigkeit Ihrer Investments=20
+Einsch=C3=A4tzungen basieren auf historischen Kursen=20
+
+
+Rentablo Nutzer kauften diese Woche
+=C2=BB=C2=A0MICROSOFT DL-,00000625 (US5949181045)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DMICROSOFT++++DL-%2C=
+00000625&isin=3DUS5949181045&tickerSymbol=3Dtts-9661678&quoteProvider=3D=
+tte>=20
+=C2=BB=C2=A0BIONTECH SE SPON. ADRS 1 (US09075V1026)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DBIONTECH+SE+SPON.+A=
+DRS+1&isin=3DUS09075V1026&tickerSymbol=3Dtts-176159975&quoteProvider=3D=
+tte>=20
+=C2=BB=C2=A0TESLA INC. DL -,001 (US88160R1014)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DTESLA+INC.+DL+-%2C0=
+01&isin=3DUS88160R1014&tickerSymbol=3Dtts-23948851&quoteProvider=3Dtte=
+>=20
+=C2=BB=C2=A0NVIDIA CORP. DL-,001 (US67066G1040)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DNVIDIA+CORP.++++++D=
+L-%2C001&isin=3DUS67066G1040&tickerSymbol=3Dtts-9679281&quoteProvider=3D=
+tte>=20
+=C2=BB=C2=A0Netflix (US64110L1061)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DNetflix&isin=3DUS64=
+110L1061&tickerSymbol=3Dtts-9686034&quoteProvider=3Dtte>=20
+
+--mk3-cc3aa0647ba844c2971d870191d6426f
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html" charset=3D=
+"UTF-8"/>
+    <link href=3D"https://fonts.googleapis.com/css?family=3DArvo:400,4=
+00i,700,700i|Lato:400,400i,700,700i" rel=3D"stylesheet">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-s=
+cale=3D1, minimum-scale=3D1"/>
+
+    <style type=3D"text/css">
+    body {
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            -webkit-text-size-adjust: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+    }
+
+    .header {
+        height: 90px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: #041825;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .footerContainer {
+        width: 100%;
+        text-align: center;
+        line-height: 200%;
+        color: #E1E2F4;
+    }
+
+    @media (min-width: 768px) {
+        .footerContainer {
+            width: 600px !important;
+        }
+    }
+
+    .templateContainer {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    @media (min-width: 768px) {
+        .templateContainer {
+            width: 600px !important;
+            margin-bottom: 50px;
+        }
+    }
+
+    .headerLogo {
+        width: 99px;
+        height: 40px;
+        padding: 15px 15px 0 15px;
+    }
+
+    a {
+        color: #13B0E1;
+        text-decoration: none;
+    }
+
+    h1 {
+        color: #041825;
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+    h2 {
+        color: #041825;
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: left;
+    }
+
+    .spacerBottom {
+        padding-bottom: 10px;
+    }
+
+    .spacerBottomSmall {
+        padding-bottom: 5px;
+    }
+
+    .spacerTop {
+        padding-top: 10px
+    }
+
+    .spacerLeftSmall {
+        padding-left: 5px
+    }
+
+    .small {
+        font-size: 0.8em;
+    }
+
+    .currentOfferImage {
+        width: 100%
+    }
+
+    .currentOfferImageContainer {
+        width: 70%;
+        max-width: 470px;
+        float: left;
+        padding-right: 10px;
+    }
+
+    .colXs4 {
+        width: 32%;
+        max-width: 200px;
+        float: left;
+    }
+    </style>
+</head>
+
+<body>
+<div id=3D"header" class=3D"header">
+    <img src=3D"https://rentablo.de/assets/rentablo_logo.png"
+         alt=3D"Rentablo, eine Marke der wealthAPI GmbH"
+         class=3D"headerLogo"/>
+</div>
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+>
+    <tr>
+        <td align=3D"center">
+            <div class=3D"templateContainer">
+               =20
+
+<h1>Ihr Rentablo Investment-Report</h1>
+
+<p>
+   =20
+        Lieber
+   =20
+    Max Muster,
+</p>
+
+
+<p>
+    Anbei erhalten Sie Ihren
+   =20
+        w=C3=B6chentlichen
+   =20
+    Investment Report.
+</p>
+
+<div style=3D"width: 100%;">
+    <h2>Aktuelles von Rentablo</h2>
+
+    <div class=3D"spacerBottom" style=3D"max-width: 500px;">
+       =20
+            <div class=3D"currentOfferImageContainer">
+                <img src=3D"https://blog.rentablo.de/wp-content/upload=
+s/2022/01/Zinswende.jpg"
+                     class=3D"currentOfferImage"/>
+            </div>
+       =20
+        <p>
+           =20
+                <a href=3D"https://click.pstmrk.it/2s/blog.rentablo.de=
+%2Fzinswende%2F/X68IWSkN/l9Iw/835u_Sx2tq">
+                    Die Zinswende naht: Was das f=C3=BCr (Fonds-)Spare=
+r bedeutet
+                </a>
+           =20
+        </p>
+    </div>
+
+    <div style=3D"clear: both;"></div>
+   =20
+        <div style=3D"max-width: 600px;">
+            Die Inflation in Europa und den USA ist da, nun sind h=C3=B6=
+here (Leit-)Zinsen und damit die Zinswende absehbar. Wie wird sich das=
+ f=C3=BCr (Fonds-)Sparer auswirken? Wir geben einen =C3=9Cberblick, we=
+lche positive wie negative Folgen eine Zinswende f=C3=BCr Anleger habe=
+n kann.
+        </div>
+   =20
+</div>
+
+<h2>Ver=C3=A4nderung Depotwert</h2>
+
+    Wertver=C3=A4nderung (Performance) Ihrer Depots
+
+
+    <div>
+        <b>
+            &bull; 0,05=C2=A0%
+        </b>
+        seit 7 Tagen
+    </div>
+
+
+
+    <div>
+        <b>
+            &bull; -7,62=C2=A0%
+        </b>
+        seit einem Monat
+    </div>
+
+
+
+
+    <h2>Ihre Investment-Performance</h2>
+
+    <div class=3D"spacerBottom">
+        <div>
+            Performance: Wertentwicklung Ihrer Depots; Peer Group: Nut=
+zer mit
+           =20
+           =20
+                <b>mittlerer</b>
+           =20
+           =20
+            Risiko-Neigung.
+        </div>
+    </div>
+
+    <div>
+       =20
+            <div class=3D"spacerBottom">
+                <div class=3D"spacerBottomSmall">
+                    Seit 6 Monaten:
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            0,9=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: 1,0=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: -1,7=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <div class=3D"spacerBottom">
+                <div class=3D"spacerBottomSmall">
+                    Seit Jahresanfang (YTD):
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            -7,7=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: -5,7=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: -3,6=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <div class=3D"spacerBottomSmall">
+                <div class=3D"spacerBottomSmall">
+                    Seit 12 Monaten:
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            17,1=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: 13,8=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: 14,2=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fapp/YK=
+8IWSkN/l9Iw/hDYc7SIUNW#!/performance">
+                &raquo;&nbsp;Zur Depotanalyse
+            </a>
+       =20
+    </div>
+
+
+
+
+    <h2>Risiko-Einsch=C3=A4tzung</h2>
+
+    <div class=3D"spacerBottomSmall">
+        <b>
+           =20
+           =20
+                Mittleres
+           =20
+           =20
+        </b>
+        Risiko
+    </div>
+
+    <div class=3D"spacerBottomSmall">
+        <b>
+           =20
+           =20
+           =20
+                Hohe
+           =20
+        </b>
+        gegenseitige Abh=C3=A4ngigkeit Ihrer Investments
+    </div>
+
+    <div class=3D"spacerBottomSmall small">
+        Einsch=C3=A4tzungen basieren auf historischen Kursen
+    </div>
+
+   =20
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fapp/YK8IWS=
+kN/l9Iw/hDYc7SIUNW#!/performance">
+            &raquo;&nbsp;Zur Depotanalyse
+        </a>
+   =20
+
+
+
+<h2>Rentablo Nutzer kauften diese Woche</h2>
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DMICROSOFT%2B%2B%2B%2BDL-%252C00000625%26is=
+in%3DUS5949181045%26tickerSymbol%3Dtts-9661678%26quoteProvider%3Dtte/Y=
+a8IWSkN/l9Iw/yuvDjZ-YZA">
+                &raquo;&nbsp;MICROSOFT    DL-,00000625
+                (US5949181045)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DBIONTECH%2BSE%2BSPON.%2BADRS%2B1%26isin%3D=
+US09075V1026%26tickerSymbol%3Dtts-176159975%26quoteProvider%3Dtte/Yq8I=
+WSkN/l9Iw/3inwfAHtU3">
+                &raquo;&nbsp;BIONTECH SE SPON. ADRS 1
+                (US09075V1026)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DTESLA%2BINC.%2BDL%2B-%252C001%26isin%3DUS8=
+8160R1014%26tickerSymbol%3Dtts-23948851%26quoteProvider%3Dtte/Y68IWSkN=
+/l9Iw/KVtfyF1Kux">
+                &raquo;&nbsp;TESLA INC. DL -,001
+                (US88160R1014)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DNVIDIA%2BCORP.%2B%2B%2B%2B%2B%2BDL-%252C00=
+1%26isin%3DUS67066G1040%26tickerSymbol%3Dtts-9679281%26quoteProvider%3=
+Dtte/ZK8IWSkN/l9Iw/1E6IwP1MFD">
+                &raquo;&nbsp;NVIDIA CORP.      DL-,001
+                (US67066G1040)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DNetflix%26isin%3DUS64110L1061%26tickerSymb=
+ol%3Dtts-9686034%26quoteProvider%3Dtte/Za8IWSkN/l9Iw/sniQwr2-kg">
+                &raquo;&nbsp;Netflix
+                (US64110L1061)
+            </a>
+        </div>
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+
+
+    <div class=3D"spacerBottom spacerTop">
+        <div class=3D"spacerBottom">
+            Wie oft m=C3=B6chten Sie Ihren Investment-Report erhalten?
+        </div>
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D1%26token%3DtgkkafAGPOtyjPN9kw=
+2xEDM2SoPuwBJ%252BoYNRKKrfd52UONBgmJp1fAgSWsqJPPJE/Zq8IWSkN/l9Iw/qVyaF=
+sAe88">
+            &#91;&nbsp;W=C3=B6chentlich&nbsp;&#93;</a>
+        &nbsp;&nbsp;
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D2%26token%3DtgkkafAGPOtyjPN9kw=
+2xEDM2SoPuwBJ%252BoYNRKKrfd52UONBgmJp1fAgSWsqJPPJE/Z68IWSkN/l9Iw/RI4rc=
+5RSlT">
+            &#91;&nbsp;Monatlich&nbsp;&#93;</a>
+        &nbsp;&nbsp;
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D9%26token%3DtgkkafAGPOtyjPN9kw=
+2xEDM2SoPuwBJ%252BoYNRKKrfd52UONBgmJp1fAgSWsqJPPJE/aK8IWSkN/l9Iw/UN9Fi=
+Ib8p_">
+            &#91;&nbsp;Nie&nbsp;&#93;</a>
+    </div>
+
+
+
+                <p>
+                    <br/>
+                    Mit freundlichen Gr=C3=BC=C3=9Fen,<br/>
+                    <i>Ihr Rentablo-Team</i>
+                </p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class=3D"footer">
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" class=3D"footerContainer"
+           style=3D"border-collapse: collapse;">
+        <tr>
+            <td>
+                <div>
+                    Rentablo, eine Marke der wealthAPI GmbH -
+                    Fanny-Zobel-Str. 9,
+                    12435
+                    Berlin
+                </div>
+
+                <div>
+                    Tel: (0) 30 - 71 53 30 09
+                </div>
+
+                <div>
+                    Email: info@rentablo.de
+                </div>
+
+                <div>
+                    <a href=3D"https://click.pstmrk.it/2s/rentablo.de%=
+2Fimpressum/aa8IWSkN/l9Iw/9lzgHEBTxE">Impressum</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<img src=3D"https://ea.pstmrk.it/open/v3_97AQNbd3BlaIWvj-9mBBXjMRVXd43=
+74w06TRFKpxmEY3z7JiuWgmNUqEI2LYwyjUZTwlxUpokWXiHgamsPQLAk0mxI0wPDDT5pz=
+6ecF4wDm3AgaOh0jJdIs7Y3kmsa6wYbGy_IBEv4EeEb-iT3Tyc8dDcEfDeReuN4g4xzAEL=
+tG6h--U65NPtjtLTq6leM6RowrZaHyOLcfXC6Eya7FPTOdWt-vLjVBb2cs54U_RBOYyjbV=
+OtaS9qkzvoHvCy8ihDjmBX8QHLP1B1dTLNCvR7v17d_rcqLaxSjZV-29z_bVIHbA7v5vBg=
+8rgZ9emH4AYg_YCuXfX7vuIVdFMpRKaMV1w_90eq_5CXA7qkgCeWb9u51aas6cdRRqWuCH=
+UqtxJc1aT-7fkuFyCZQf6TDXBtMLTJRQ-xNkTU01Xn2yu-CA" width=3D"1" height=3D=
+"1" border=3D"0" alt=3D"" /></body>
+</html>
+
+--mk3-cc3aa0647ba844c2971d870191d6426f--

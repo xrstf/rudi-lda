@@ -1,0 +1,44 @@
+Return-Path: <noreply@sunnyportal.com>
+Delivered-To: exampleuser
+Received: from 21d123d3d079
+	by 21d123d3d079 (Dovecot) with LMTP id cbiuKe1u9WGyBwAAZPvwMw
+	for <exampleuser>; Sat, 29 Jan 2022 16:44:29 +0000
+Return-Path: noreply@sunnyportal.com
+Delivered-To: recipient@example.com
+Received: from 2nd-mailin.sunnyportal.com (2nd-mailin.sunnyportal.com [171.25.178.13])
+	by example.com (OpenSMTPD) with ESMTPS id 3a95db12 (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128:NO)
+	for <recipient@example.com>;
+	Sat, 29 Jan 2022 16:44:29 +0000 (UTC)
+dkim-signature: v=1; a=rsa-sha256; d=sunnyportal.com; s=1546957427.sunnyportal;
+	c=relaxed/relaxed; q=dns/txt; h=From:Sender:Subject:Date:Message-ID:To:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=bVdeW4ljfCWRB/xQikUgXSUfXl3p6/zSPmwtpHdwKow=;
+	b=G7OgOVy6BWqVoOKLK+3TqOGtMeDg5do4IxAZtbvc6PqsDp32ejeXLo5cnI1InijSQtQmu8ucSmAc/qmSdq2rL+l6O/yv5VnmwUili2WQc+i3REslscvuK46KsGPmDGNnukUnKPaw0CByJ2iMTDgZcNXHp5h9b8asgM2ZutFxAfw=
+Received: from mailin.sunnyportal.com (Unknown [192.168.4.1])
+	by 2nd-mailin.sunnyportal.com with ESMTP
+	; Sat, 29 Jan 2022 17:44:29 +0100
+Message-ID: <135837125-9892@mailin.sunnyportal.com>
+X-Footer: c3Vubnlwb3J0YWwuY29t
+Received: from 05VRP04 ([192.168.5.24])
+	by mailin.sunnyportal.com with ESMTP
+	for recipient@example.com;
+	Sat, 29 Jan 2022 17:44:27 +0100
+MIME-Version: 1.0
+Sender: noreply@sunnyportal.com
+From: noreply@sunnyportal.com
+To: recipient@example.com
+Date: 29 Jan 2022 17:44:26 +0100
+Subject: TESTREPORT Sunny Portal Info Report Test Org 1/28/2022 Daily
+ Production: 6.205 kWh / Daily Revenue: 0.496 EUR / Daily CO2 Reduction:
+ 4.344 kg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQpTTUEgU29sYXIgVGVjaG5vbG9neSBB
+Rw0KQ2hhaXJtYW4gb2YgdGhlIHN1cGVydmlzb3J5IGJvYXJkOiBVd2UgS2xlaW5rYXVm
+DQpNYW5hZ2VtZW50IGJvYXJkOiBVbHJpY2ggSGFkZGluZywgRHIuLUluZy4gSnVlcmdl
+biBSZWluZXJ0DQpNdW5pY2lwYWwgY291cnQgS2Fzc2VsIG1lcmNhbnRpbGUgcmVnaXN0
+ZXIgZGVwIEhSQiAzOTcyDQpDb21wYW55IGhlYWRxdWFydGVyczogMzQyNjYgTmllc3Rl
+dGFsLCBHZXJtYW55DQpVU3QtSUQtTnIuIERFIDExMyAwOCA1OSA1NA0KV0VFRS1SZWcu
+LU5yLiBERSA5NTg4MTE1MA0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t

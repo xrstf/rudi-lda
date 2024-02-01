@@ -1,0 +1,852 @@
+Return-Path: <pm_bounces@pm-bounces.rentablo.de>
+Delivered-To: exampleuser
+Received: from 834e66cc304e
+	by 834e66cc304e (Dovecot) with LMTP id Y7RqCWQ9L2MfCgAAX/174w
+	for <exampleuser>; Sat, 24 Sep 2022 17:24:52 +0000
+Return-Path: pm_bounces@pm-bounces.rentablo.de
+Delivered-To: recipient@example.com
+Received: from mta201a-ord.mtasv.net (mta201a-ord.mtasv.net [104.245.209.201])
+	by example.com (OpenSMTPD) with ESMTPS id 063a937c (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO)
+	for <recipient@example.com>;
+	Sat, 24 Sep 2022 17:24:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=pm20220416; d=pm.mtasv.net;
+ h=From:Date:Subject:Message-Id:Reply-To:To:MIME-Version:Content-Type;
+ bh=ISClFlDz+O2JT5dsZdN5kn12cZI=;
+ b=7BvNfl8OUtZr9xIJ4koMxBAcfRPMsIuEARbeo49pu3ZaBaxbVb7X4Aja1QBPFZzG2QcY3MqQEx5v
+   7vQTMC55PbugCeihpQyhNKcqpnlDnac+yFnV+P6SKbT4bfTS3Y6FcCumCsoFtzvJ1DF7a7aUkCtP
+   9q1VdE9M2nM0G1vq6Zg=
+Received: by mta201a-ord.mtasv.net id h5sum627tk4e for <recipient@example.com>; Sat, 24 Sep 2022 13:24:50 -0400 (envelope-from <pm_bounces@pm-bounces.rentablo.de>)
+X-PM-IP: 104.245.209.201
+X-IADB-IP: 104.245.209.201
+X-IADB-IP-REVERSE: 201.209.245.104
+DKIM-Signature: v=1; a=rsa-sha256; d=rentablo.de; s=20170812201048pm;
+	c=relaxed/relaxed; i=noreply@rentablo.de; t=1664040290;
+	h=date:date:from:from:message-id:reply-to:reply-to:sender:subject:subject:to:
+	to:cc:feedback-id:mime-version:content-type;
+	bh=BRmvEbxuxbVdWs1tTedetb+a53OEaShKUA+28K5fA3E=;
+	b=SG50lgviSDUw63Np0pG70zTwtMVSKh/+n55Q/LZMLfYcN6aXxA7fk9xcR4ufLYoRKOLTmElwgz+
+	GWuq7vXQBloBFEKqwfHtG6JIRYYrOCsHqYlXtEJrNNKGiksbgfohWzlQz8t4fv/w4AfU89ZI9qa8Y
+	VID5rUCtE2dpEDMblMo=
+From: Rentablo GmbH <noreply@rentablo.de>
+Date: Sat, 24 Sep 2022 17:24:50 +0000
+Subject: Ihr Rentablo Investment-Report
+Message-Id: <f099fb1f-6a42-4b9d-82ab-f59372e2e975@mtasv.net>
+Reply-To: noreply@rentablo.de
+To: recipient@example.com
+Feedback-ID: s3199639-_:s3199639:a145192:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-PM-Message-Id: f099fb1f-6a42-4b9d-82ab-f59372e2e975
+X-PM-RCPT: |bTB8MTQ1MTkyfDMxOTk2Mzl8cmVudGFibG9AeHJzdGYuZGU=|
+X-PM-Message-Options: v1;9Hcc_PIAriBnYBOfaIwCcyIPcaJJ4QcTBG0Vjf0upsKfpR9qOJtFHrXwPywaBTAW0yivONdmCE8g_Gy1UcqUBBDOwW7mU_BYoMQKRhXnXR0
+MIME-Version: 1.0
+X-PM-MTA-Pool: transactional-3
+Content-Type: multipart/alternative;
+	boundary=mk3-10bd3a5fb0ab452d8e301ddd36472049; charset=UTF-8
+
+--mk3-10bd3a5fb0ab452d8e301ddd36472049
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ihr Rentablo Investment-Report
+
+
+   =20
+        Lieber
+   =20
+    Max Muster,
+
+
+   =20
+
+
+
+    Anbei erhalten Sie Ihren
+   =20
+        w=C3=B6chentlichen
+   =20
+    Investment Report.
+
+
+
+    Aktuelles von Rentablo
+
+   =20
+       =20
+           =20
+               =20
+           =20
+       =20
+       =20
+           =20
+               =20
+                    2,1% Prozent schon f=C3=BCr zwei Jahre: Zinsen bei=
+m Festgeld ziehen deutlich an
+               =20
+           =20
+       =20
+   =20
+
+   =20
+   =20
+       =20
+            Beim Festgeld ziehen die Zinsen besonders an und verbesser=
+ten sich gegen=C3=BCber unserem Bericht vor einem Monat noch mal deutl=
+ich. So erh=C3=B6ht die pbbdirekt bei allen Laufzeit die Zinsen und bi=
+etet ab 26.9. nun schon bei zwei Jahren 2,1  Prozent.
+       =20
+   =20
+
+
+Ver=C3=A4nderung Depotwert
+
+
+   =20
+       =20
+            =E2=80=A2 -2,71=C2=A0%
+       =20
+        seit 7 Tagen
+   =20
+
+
+
+   =20
+       =20
+            =E2=80=A2 -7,81=C2=A0%
+       =20
+        seit einem Monat
+   =20
+
+
+
+
+    Ihre Investment-Performance
+
+   =20
+       =20
+            Performance: Wertentwicklung Ihrer Depots; Peer Group: Nut=
+zer mit
+           =20
+           =20
+                mittlerer
+           =20
+           =20
+            Risiko-Neigung.
+       =20
+   =20
+
+   =20
+       =20
+           =20
+               =20
+                    Seit 6 Monaten:
+               =20
+
+               =20
+                   =20
+                        Sie:
+                       =20
+                            -9,1=C2=A0%
+                       =20
+                   =20
+
+                   =20
+                        Peers: -9,9=C2=A0%
+                   =20
+
+                   =20
+                        DAX: -14,4=C2=A0%
+                   =20
+               =20
+               =20
+           =20
+       =20
+
+       =20
+           =20
+               =20
+                    Seit Jahresanfang (YTD):
+               =20
+
+               =20
+                   =20
+                        Sie:
+                       =20
+                            -14,3=C2=A0%
+                       =20
+                   =20
+
+                   =20
+                        Peers: -13,6=C2=A0%
+                   =20
+
+                   =20
+                        DAX: -22,7=C2=A0%
+                   =20
+               =20
+               =20
+           =20
+       =20
+
+       =20
+           =20
+               =20
+                    Seit 12 Monaten:
+               =20
+
+               =20
+                   =20
+                        Sie:
+                       =20
+                            -8,5=C2=A0%
+                       =20
+                   =20
+
+                   =20
+                        Peers: -8,7=C2=A0%
+                   =20
+
+                   =20
+                        DAX: -21,0=C2=A0%
+                   =20
+               =20
+               =20
+           =20
+       =20
+
+       =20
+   =20
+
+
+
+
+    Risiko-Einsch=C3=A4tzung
+
+   =20
+       =20
+           =20
+           =20
+                Mittleres
+           =20
+           =20
+       =20
+        Risiko
+   =20
+
+   =20
+       =20
+           =20
+           =20
+           =20
+                Hohe
+           =20
+       =20
+        gegenseitige Abh=C3=A4ngigkeit Ihrer Investments
+   =20
+
+   =20
+        Einsch=C3=A4tzungen basieren auf historischen Kursen
+   =20
+
+   =20
+       =20
+   =20
+
+
+
+Rentablo Nutzer kauften diese Woche
+
+   =20
+       =20
+           =20
+                =C2=BB=C2=A0Microsoft Corporation
+                (US5949181045)
+           =20
+       =20
+   =20
+
+   =20
+       =20
+           =20
+                =C2=BB=C2=A0Deutsche Post
+                (DE0005552004)
+           =20
+       =20
+   =20
+
+   =20
+       =20
+           =20
+                =C2=BB=C2=A0APPLE INC.
+                (US0378331005)
+           =20
+       =20
+   =20
+
+   =20
+       =20
+           =20
+                =C2=BB=C2=A0ALLIANZ SE NA O.N.
+                (DE0008404005)
+           =20
+       =20
+   =20
+
+   =20
+       =20
+           =20
+                =C2=BB=C2=A0BASF SE
+                (DE000BASF111)
+           =20
+       =20
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+
+
+
+--mk3-10bd3a5fb0ab452d8e301ddd36472049
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html" charset=3D=
+"UTF-8"/>
+    <link href=3D"https://fonts.googleapis.com/css?family=3DArvo:400,4=
+00i,700,700i|Lato:400,400i,700,700i" rel=3D"stylesheet">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-s=
+cale=3D1, minimum-scale=3D1"/>
+
+    <style type=3D"text/css">
+    body {
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            -webkit-text-size-adjust: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+    }
+
+    .header {
+        height: 90px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: #041825;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .footerContainer {
+        width: 100%;
+        text-align: center;
+        line-height: 200%;
+        color: #E1E2F4;
+    }
+
+    @media (min-width: 768px) {
+        .footerContainer {
+            width: 600px !important;
+        }
+    }
+
+    .templateContainer {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    @media (min-width: 768px) {
+        .templateContainer {
+            width: 600px !important;
+            margin-bottom: 50px;
+        }
+    }
+
+    .headerLogo {
+        width: 99px;
+        height: 40px;
+        padding: 15px 15px 0 15px;
+    }
+
+    a {
+        color: #13B0E1;
+        text-decoration: none;
+    }
+
+    h1 {
+        color: #041825;
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+    h2 {
+        color: #041825;
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: left;
+    }
+
+    .spacerBottom {
+        padding-bottom: 10px;
+    }
+
+    .spacerBottomSmall {
+        padding-bottom: 5px;
+    }
+
+    .spacerTop {
+        padding-top: 10px
+    }
+
+    .spacerLeftSmall {
+        padding-left: 5px
+    }
+
+    .small {
+        font-size: 0.8em;
+    }
+
+    .currentOfferImage {
+        width: 100%
+    }
+
+    .currentOfferImageContainer {
+        width: 50%;
+        max-width: 150px;
+        float: left;
+        padding-right: 10px;
+    }
+
+    @media (min-width: 768px) {
+        .currentOfferImageContainer {
+            width: 70%;
+            max-width: 150px;
+            float: left;
+            padding-right: 10px;
+        }
+    }
+
+    .colXs4 {
+        width: 32%;
+        max-width: 200px;
+        float: left;
+    }
+    </style>
+</head>
+
+<body>
+<div id=3D"header" class=3D"header">
+    <img src=3D"https://rentablo.de/assets/rentablo_logo.png"
+         alt=3D"Rentablo, eine Marke der wealthAPI GmbH"
+         class=3D"headerLogo"/>
+</div>
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+>
+    <tr>
+        <td align=3D"center">
+            <div class=3D"templateContainer">
+               =20
+
+<h1>Ihr Rentablo Investment-Report</h1>
+
+<p>
+   =20
+        Lieber
+   =20
+    Max Muster,
+</p>
+
+
+<p>
+    Anbei erhalten Sie Ihren
+   =20
+        w=C3=B6chentlichen
+   =20
+    Investment Report.
+</p>
+
+<div style=3D"width: 100%;">
+    <h2>Aktuelles von Rentablo</h2>
+
+    <div class=3D"spacerBottom">
+       =20
+            <div class=3D"currentOfferImageContainer">
+                <img src=3D"https://blog.rentablo.de/wp-content/upload=
+s/2022/08/Festgeld.jpg"
+                     class=3D"currentOfferImage"/>
+            </div>
+       =20
+        <p>
+           =20
+                <a href=3D"https://click.pstmrk.it/2s/blog.rentablo.de=
+%2Ffestgeld%2F/xx4ULDIN/l9Iw/W2pBTjHlJh">
+                    2,1% Prozent schon f=C3=BCr zwei Jahre: Zinsen bei=
+m Festgeld ziehen deutlich an
+                </a>
+           =20
+        </p>
+    </div>
+
+    <div style=3D"clear: both;"></div>
+   =20
+        <div style=3D"max-width: 600px;">
+            Beim Festgeld ziehen die Zinsen besonders an und verbesser=
+ten sich gegen=C3=BCber unserem Bericht vor einem Monat noch mal deutl=
+ich. So erh=C3=B6ht die pbbdirekt bei allen Laufzeit die Zinsen und bi=
+etet ab 26.9. nun schon bei zwei Jahren 2,1  Prozent.
+        </div>
+   =20
+</div>
+
+<h2>Ver=C3=A4nderung Depotwert</h2>
+
+    Wertver=C3=A4nderung (Performance) Ihrer Depots
+
+
+    <div>
+        <b>
+            &bull; -2,71=C2=A0%
+        </b>
+        seit 7 Tagen
+    </div>
+
+
+
+    <div>
+        <b>
+            &bull; -7,81=C2=A0%
+        </b>
+        seit einem Monat
+    </div>
+
+
+
+
+    <h2>Ihre Investment-Performance</h2>
+
+    <div class=3D"spacerBottom">
+        <div>
+            Performance: Wertentwicklung Ihrer Depots; Peer Group: Nut=
+zer mit
+           =20
+           =20
+                <b>mittlerer</b>
+           =20
+           =20
+            Risiko-Neigung.
+        </div>
+    </div>
+
+    <div>
+       =20
+            <div class=3D"spacerBottom">
+                <div class=3D"spacerBottomSmall">
+                    Seit 6 Monaten:
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            -9,1=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: -9,9=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: -14,4=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <div class=3D"spacerBottom">
+                <div class=3D"spacerBottomSmall">
+                    Seit Jahresanfang (YTD):
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            -14,3=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: -13,6=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: -22,7=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <div class=3D"spacerBottomSmall">
+                <div class=3D"spacerBottomSmall">
+                    Seit 12 Monaten:
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            -8,5=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: -8,7=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: -21,0=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fapp/yB=
+4ULDIN/l9Iw/TXavOwn3Lg#!/performance">
+                &raquo;&nbsp;Zur Depotanalyse
+            </a>
+       =20
+    </div>
+
+
+
+
+    <h2>Risiko-Einsch=C3=A4tzung</h2>
+
+    <div class=3D"spacerBottomSmall">
+        <b>
+           =20
+           =20
+                Mittleres
+           =20
+           =20
+        </b>
+        Risiko
+    </div>
+
+    <div class=3D"spacerBottomSmall">
+        <b>
+           =20
+           =20
+           =20
+                Hohe
+           =20
+        </b>
+        gegenseitige Abh=C3=A4ngigkeit Ihrer Investments
+    </div>
+
+    <div class=3D"spacerBottomSmall small">
+        Einsch=C3=A4tzungen basieren auf historischen Kursen
+    </div>
+
+   =20
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fapp/yB4ULD=
+IN/l9Iw/TXavOwn3Lg#!/performance">
+            &raquo;&nbsp;Zur Depotanalyse
+        </a>
+   =20
+
+
+
+<h2>Rentablo Nutzer kauften diese Woche</h2>
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fv2%2Fs=
+ecurities%3FtickerSymbol%3Dtts-9661678%26quoteProvider%3Dtte/yR4ULDIN/=
+l9Iw/a9iZ1PhHLH">
+                &raquo;&nbsp;Microsoft Corporation
+                (US5949181045)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fv2%2Fs=
+ecurities%3FtickerSymbol%3Dtts-9546320%26quoteProvider%3Dtte/yh4ULDIN/=
+l9Iw/zc4CniYO9X">
+                &raquo;&nbsp;Deutsche Post
+                (DE0005552004)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fv2%2Fs=
+ecurities%3FtickerSymbol%3Dtts-9555757%26quoteProvider%3Dtte/yx4ULDIN/=
+l9Iw/aWl7vGJEVt">
+                &raquo;&nbsp;APPLE INC.
+                (US0378331005)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fv2%2Fs=
+ecurities%3FtickerSymbol%3Dtts-9560485%26quoteProvider%3Dtte/zB4ULDIN/=
+l9Iw/Z37M56bij5">
+                &raquo;&nbsp;ALLIANZ SE NA O.N.
+                (DE0008404005)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fv2%2Fs=
+ecurities%3FtickerSymbol%3Dtts-24354992%26quoteProvider%3Dtte/zR4ULDIN=
+/l9Iw/eXOfaHowDq">
+                &raquo;&nbsp;BASF SE
+                (DE000BASF111)
+            </a>
+        </div>
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+
+
+    <div class=3D"spacerBottom spacerTop">
+        <div class=3D"spacerBottom">
+            Wie oft m=C3=B6chten Sie Ihren Investment-Report erhalten?
+        </div>
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D1%26token%3DxQUUmSmwyBfK8FBJSR=
+VvBJVaaKkJRoUcnZPg5k8woESgInj72v5BBCNZNQYLMYM7/zh4ULDIN/l9Iw/IU6vtAEKm=
+r">
+            &#91;&nbsp;W=C3=B6chentlich&nbsp;&#93;</a>
+        &nbsp;&nbsp;
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D2%26token%3DxQUUmSmwyBfK8FBJSR=
+VvBJVaaKkJRoUcnZPg5k8woESgInj72v5BBCNZNQYLMYM7/zx4ULDIN/l9Iw/dnEu9hBeK=
+I">
+            &#91;&nbsp;Monatlich&nbsp;&#93;</a>
+        &nbsp;&nbsp;
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D9%26token%3DxQUUmSmwyBfK8FBJSR=
+VvBJVaaKkJRoUcnZPg5k8woESgInj72v5BBCNZNQYLMYM7/0B4ULDIN/l9Iw/NguKoqFjE=
+n">
+            &#91;&nbsp;Nie&nbsp;&#93;</a>
+    </div>
+
+
+
+                <p>
+                    <br/>
+                    Mit freundlichen Gr=C3=BC=C3=9Fen,<br/>
+                    <i>Ihr Rentablo-Team</i>
+                </p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class=3D"footer">
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" class=3D"footerContainer"
+           style=3D"border-collapse: collapse;">
+        <tr>
+            <td>
+                <div>
+                    Rentablo, eine Marke der wealthAPI GmbH -
+                    Fanny-Zobel-Str. 9,
+                    12435
+                    Berlin
+                </div>
+
+                <div>
+                    Tel: (0) 30 - 71 53 30 09
+                </div>
+
+                <div>
+                    Email: info@rentablo.de
+                </div>
+
+                <div>
+                    <a href=3D"https://click.pstmrk.it/2s/rentablo.de%=
+2Fimpressum/0R4ULDIN/l9Iw/UNZafd03_U">Impressum</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<img src=3D"https://ea.pstmrk.it/open/v3_97AQNbd3BlaIWvj-9mBBXjMRVXd43=
+74w06TRFKpxmEY3z7JiuWgmNUqEI2LYwyjUzH1EprdB8Bj1V4P2G0LTzY2ho21yZgvi-JR=
+cKDhA0jzvzoVt9BmabocUa4betGvNJhRkiJEemP7EZpVhtyewp3QM76za2AbHSL7cpNplG=
+1DqUPm4wLHu5Y07wZAnj5Q9VHWVXk6MWyoASH-YMiblGlMOmNAxXI7O6AgDVJ4FglEndOG=
+kt8PME5qciphvKSgWG34clTqTuvvAkdF4UH1C4Dvnhrt6FHoLP64usN0Lngqm0fj-fL7a7=
+teGPNdJLTnVyQG5YLF9wq_JBx38Qyes8cIYtH1vRaAY07iDZ6Qwmy5ROAjvex-7G3nKCpY=
+CmBzeN09yp-Q9_OWLx7NY7SspXRWUb8NI5X5fb8T2TfJYse4" width=3D"1" height=3D=
+"1" border=3D"0" alt=3D"" /></body>
+</html>
+
+--mk3-10bd3a5fb0ab452d8e301ddd36472049--

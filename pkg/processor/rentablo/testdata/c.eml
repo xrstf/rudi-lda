@@ -1,0 +1,671 @@
+Return-Path: <pm_bounces@pm-bounces.rentablo.de>
+Delivered-To: exampleuser
+Received: from b40dec361cc3
+	by b40dec361cc3 (Dovecot) with LMTP id 2PQ5LbmX4mGRAgAA5R1ltw
+	for <exampleuser>; Sat, 15 Jan 2022 09:45:29 +0000
+Return-Path: pm_bounces@pm-bounces.rentablo.de
+Delivered-To: recipient@example.com
+Received: from mta214a-ord.mtasv.net (mta214a-ord.mtasv.net [104.245.209.214])
+	by example.com (OpenSMTPD) with ESMTPS id e20a8ca0 (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO)
+	for <recipient@example.com>;
+	Sat, 15 Jan 2022 09:45:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=pm; d=pm.mtasv.net;
+ h=From:Date:Subject:Message-Id:Reply-To:To:MIME-Version:Content-Type;
+ bh=u6C9U+hQeEzg+F8l+Oa1/zTLmFg=;
+ b=wrpUKPq+SIEbGmBwwx4KeN+FWo8NZenHCBrvhhpSCS0GXoycDF4x1cqRNuznLnvVyd7rLzWmablE
+   uZBsXs20dAlOwi1FPoBy/q9eIXnlN1+N8MJTxK+0uY9x584fj7ImaNVRx1FA8uT0TF3yM3pU72Ap
+   eXsHgWndvuyx3eXTt9M=
+Received: by mta214a-ord.mtasv.net id hsabri27tk4d for <recipient@example.com>; Sat, 15 Jan 2022 04:45:27 -0500 (envelope-from <pm_bounces@pm-bounces.rentablo.de>)
+X-PM-IP: 104.245.209.214
+X-IADB-IP: 104.245.209.214
+X-IADB-IP-REVERSE: 214.209.245.104
+DKIM-Signature: v=1; a=rsa-sha256; d=rentablo.de; s=20170812201048pm;
+	c=relaxed/relaxed; i=noreply@rentablo.de; t=1642239927;
+	h=cc:content-transfer-encoding:content-type:date:from:in-reply-to:
+	list-archive:list-help:list-id:list-owner:list-post:list-subscribe:
+	list-unsubscribe:mime-version:message-id:references:reply-to:resent-cc:
+	resent-date:resent-from:resent-message-id:resent-sender:resent-to:sender:
+	subject:to:feedback-id;
+	bh=DMK/tq0r05Pcl4O36Wdm2CUhJPgFF+nbF3HFhAOkLzU=;
+	b=HFqY3lWs1Vq3e+W1TRXmTCqwz7jf9E2aD4Xpa2yiwO617rmeoiBRXHa24OKCQKAekrUA4QzBopJ
+	hC2j42qwmL3VMM/88qGpuFu3SOIW+sExsY3xQ6rT4Dw+JohQTIgcTOACbVHoe5VZe+jpXXStRruj0
+	UcUzRB72+Wdp3H6RX/M=
+From: Rentablo GmbH <noreply@rentablo.de>
+Date: Sat, 15 Jan 2022 09:45:27 +0000
+Subject: Ihr Rentablo Investment-Report
+Message-Id: <763ebca1-d6cf-4fc1-b9de-d32f49522f59@mtasv.net>
+Reply-To: noreply@rentablo.de
+To: recipient@example.com
+Feedback-ID: s3199639-_:s3199639:a145192:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-PM-Message-Id: 763ebca1-d6cf-4fc1-b9de-d32f49522f59
+X-PM-RCPT: |bTB8MTQ1MTkyfDMxOTk2Mzl8cmVudGFibG9AeHJzdGYuZGU=|
+X-PM-Message-Options: v1;9Hcc_PIAriBnYBOfaIwCcyIPcaJJ4QcTBG0Vjf0upsKfpR9qOJtFHrXwPywaBTAW0yivONdmCE8g_Gy1UcqUBBDOwW7mU_BYoMQKRhXnXR0
+MIME-Version: 1.0
+X-PM-MTA-Pool: transactional-2
+Content-Type: multipart/alternative;
+	boundary=mk3-b3fc37813ad14a9d95f0a0fe3b1f76f8; charset=UTF-8
+
+--mk3-b3fc37813ad14a9d95f0a0fe3b1f76f8
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Ihr Rentablo Investment-Report
+
+Lieber Max Muster,=20
+
+
+Anbei erhalten Sie Ihren w=C3=B6chentlichen Investment Report.=20
+
+Aktuelles von Rentablo
+
+
+Fonds-Portr=C3=A4t Fram Capital Skandinavien: Breit gemischt, unabh=C3=
+=A4ngig vom Euro=20
+<https://blog.rentablo.de/fram-capital-skandinavien-de000a2dtlz2/>=20
+
+
+Der Fram Capital Skandinavien (www.framc.de) will das schaffen, was de=
+r BVB=20
+Dortmund mit dem Norwerger Erling Haaland zweifellos gelungen ist: M=C3=
+=B6glichst=20
+g=C3=BCnstig Player einkaufen, die in der Zukunft jeder haben will. Di=
+e Performance=20
+des 2017 in Kooperation mit Hansainvest aufgelegten Fonds (ISIN: DE000=
+A2DTLZ2)=20
+kann sich sehen lassen, wobei W=C3=A4hrungseffekte dem Fonds zu Gute k=
+amen. Wir=20
+haben mit dem Fondsmanager Florian Romacker gesprochen.
+
+
+Ver=C3=A4nderung Depotwert
+=E2=80=A2 -1,02=C2=A0% seit 7 Tagen=20
+=E2=80=A2 -0,84=C2=A0% seit einem Monat=20
+
+Ihre Investment-Performance
+Performance: Wertentwicklung Ihrer Depots; Peer Group: Nutzer mit mitt=
+lerer
+Risiko-Neigung.=20
+
+Seit 6 Monaten:=20
+Sie: 6,6=C2=A0%=20
+Peers: 4,9=C2=A0%=20
+DAX: 1,6=C2=A0%=20
+
+
+Seit Jahresanfang (YTD):=20
+Sie: -2,9=C2=A0%=20
+Peers: -2,3=C2=A0%=20
+DAX: -0,0=C2=A0%=20
+
+
+Seit 12 Monaten:=20
+Sie: 21,8=C2=A0%=20
+Peers: 16,0=C2=A0%=20
+DAX: 15,6=C2=A0%=20
+
+
+
+
+Risiko-Einsch=C3=A4tzung
+Mittleres Risiko=20
+Mittlere gegenseitige Abh=C3=A4ngigkeit Ihrer Investments=20
+Einsch=C3=A4tzungen basieren auf historischen Kursen=20
+
+
+Rentablo Nutzer kauften diese Woche
+=C2=BB=C2=A0MICROSOFT DL-,00000625 (US5949181045)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DMICROSOFT++++DL-%2C=
+00000625&isin=3DUS5949181045&tickerSymbol=3Dtts-9661678&quoteProvider=3D=
+tte>=20
+=C2=BB=C2=A0APPLE INC. (US0378331005)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DAPPLE+INC.&isin=3DU=
+S0378331005&tickerSymbol=3Dtts-9555757&quoteProvider=3Dtte>=20
+=C2=BB=C2=A0BIONTECH SE SPON. ADRS 1 BioNTech SE (US09075V1026)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DBIONTECH+SE+SPON.+A=
+DRS+1+BioNTech+SE&isin=3DUS09075V1026&tickerSymbol=3Dtts-176159975&quo=
+teProvider=3Dtte>=20
+=C2=BB=C2=A0ALLIANZ SE (DE0008404005)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DALLIANZ+SE&isin=3DD=
+E0008404005&tickerSymbol=3Dtts-9560485&quoteProvider=3Dtte>=20
+=C2=BB=C2=A0NVIDIA CORP. DL-,001 (US67066G1040)=20
+<https://rentablo.de/watchlistEntry/preview?name=3DNVIDIA+CORP.++++++D=
+L-%2C001&isin=3DUS67066G1040&tickerSymbol=3Dtts-9679281&quoteProvider=3D=
+tte>=20
+
+--mk3-b3fc37813ad14a9d95f0a0fe3b1f76f8
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html" charset=3D=
+"UTF-8"/>
+    <link href=3D"https://fonts.googleapis.com/css?family=3DArvo:400,4=
+00i,700,700i|Lato:400,400i,700,700i" rel=3D"stylesheet">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-s=
+cale=3D1, minimum-scale=3D1"/>
+
+    <style type=3D"text/css">
+    body {
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            -webkit-text-size-adjust: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+    }
+
+    .header {
+        height: 90px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: #041825;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .footerContainer {
+        width: 100%;
+        text-align: center;
+        line-height: 200%;
+        color: #E1E2F4;
+    }
+
+    @media (min-width: 768px) {
+        .footerContainer {
+            width: 600px !important;
+        }
+    }
+
+    .templateContainer {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    @media (min-width: 768px) {
+        .templateContainer {
+            width: 600px !important;
+            margin-bottom: 50px;
+        }
+    }
+
+    .headerLogo {
+        width: 99px;
+        height: 40px;
+        padding: 15px 15px 0 15px;
+    }
+
+    a {
+        color: #13B0E1;
+        text-decoration: none;
+    }
+
+    h1 {
+        color: #041825;
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+    h2 {
+        color: #041825;
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: left;
+    }
+
+    .spacerBottom {
+        padding-bottom: 10px;
+    }
+
+    .spacerBottomSmall {
+        padding-bottom: 5px;
+    }
+
+    .spacerTop {
+        padding-top: 10px
+    }
+
+    .spacerLeftSmall {
+        padding-left: 5px
+    }
+
+    .small {
+        font-size: 0.8em;
+    }
+
+    .currentOfferImage {
+        width: 100%
+    }
+
+    .currentOfferImageContainer {
+        width: 70%;
+        max-width: 470px;
+        float: left;
+        padding-right: 10px;
+    }
+
+    .colXs4 {
+        width: 32%;
+        max-width: 200px;
+        float: left;
+    }
+    </style>
+</head>
+
+<body>
+<div id=3D"header" class=3D"header">
+    <img src=3D"https://rentablo.de/assets/rentablo_logo.png"
+         alt=3D"Rentablo, eine Marke der wealthAPI GmbH"
+         class=3D"headerLogo"/>
+</div>
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+>
+    <tr>
+        <td align=3D"center">
+            <div class=3D"templateContainer">
+               =20
+
+<h1>Ihr Rentablo Investment-Report</h1>
+
+<p>
+   =20
+        Lieber
+   =20
+    Max Muster,
+</p>
+
+
+<p>
+    Anbei erhalten Sie Ihren
+   =20
+        w=C3=B6chentlichen
+   =20
+    Investment Report.
+</p>
+
+<div style=3D"width: 100%;">
+    <h2>Aktuelles von Rentablo</h2>
+
+    <div class=3D"spacerBottom" style=3D"max-width: 500px;">
+       =20
+            <div class=3D"currentOfferImageContainer">
+                <img src=3D"https://blog.rentablo.de/wp-content/upload=
+s/2022/01/FRAM_Skandinavienfonds_Prasentation.jpg"
+                     class=3D"currentOfferImage"/>
+            </div>
+       =20
+        <p>
+           =20
+                <a href=3D"https://click.pstmrk.it/2s/blog.rentablo.de=
+%2Ffram-capital-skandinavien-de000a2dtlz2%2F/tEt21SgN/l9Iw/hOyBjfbNPv"=
+>
+                    Fonds-Portr=C3=A4t Fram Capital Skandinavien: Brei=
+t gemischt, unabh=C3=A4ngig vom Euro
+                </a>
+           =20
+        </p>
+    </div>
+
+    <div style=3D"clear: both;"></div>
+   =20
+        <div style=3D"max-width: 600px;">
+            Der Fram Capital Skandinavien (www.framc.de) will das scha=
+ffen, was der BVB Dortmund mit dem Norwerger Erling Haaland zweifellos=
+ gelungen ist: M=C3=B6glichst g=C3=BCnstig Player einkaufen, die in de=
+r Zukunft jeder haben will. Die Performance des 2017 in Kooperation mi=
+t Hansainvest aufgelegten Fonds (ISIN: DE000A2DTLZ2) kann sich sehen l=
+assen, wobei W=C3=A4hrungseffekte dem Fonds zu Gute kamen. Wir haben m=
+it dem Fondsmanager Florian Romacker gesprochen.
+        </div>
+   =20
+</div>
+
+<h2>Ver=C3=A4nderung Depotwert</h2>
+
+    Wertver=C3=A4nderung (Performance) Ihrer Depots
+
+
+    <div>
+        <b>
+            &bull; -1,02=C2=A0%
+        </b>
+        seit 7 Tagen
+    </div>
+
+
+
+    <div>
+        <b>
+            &bull; -0,84=C2=A0%
+        </b>
+        seit einem Monat
+    </div>
+
+
+
+
+    <h2>Ihre Investment-Performance</h2>
+
+    <div class=3D"spacerBottom">
+        <div>
+            Performance: Wertentwicklung Ihrer Depots; Peer Group: Nut=
+zer mit
+           =20
+           =20
+                <b>mittlerer</b>
+           =20
+           =20
+            Risiko-Neigung.
+        </div>
+    </div>
+
+    <div>
+       =20
+            <div class=3D"spacerBottom">
+                <div class=3D"spacerBottomSmall">
+                    Seit 6 Monaten:
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            6,6=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: 4,9=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: 1,6=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <div class=3D"spacerBottom">
+                <div class=3D"spacerBottomSmall">
+                    Seit Jahresanfang (YTD):
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            -2,9=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: -2,3=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: -0,0=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <div class=3D"spacerBottomSmall">
+                <div class=3D"spacerBottomSmall">
+                    Seit 12 Monaten:
+                </div>
+
+                <div>
+                    <div class=3D"colXs4">
+                        Sie:
+                        <b>
+                            21,8=C2=A0%
+                        </b>
+                    </div>
+
+                    <div class=3D"colXs4">
+                        Peers: 16,0=C2=A0%
+                    </div>
+
+                    <div class=3D"colXs4">
+                        DAX: 15,6=C2=A0%
+                    </div>
+                </div>
+               =20
+                    <div style=3D"clear: both"></div>
+               =20
+            </div>
+       =20
+
+       =20
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fapp/tU=
+t21SgN/l9Iw/8G1XExDHmd#!/performance">
+                &raquo;&nbsp;Zur Depotanalyse
+            </a>
+       =20
+    </div>
+
+
+
+
+    <h2>Risiko-Einsch=C3=A4tzung</h2>
+
+    <div class=3D"spacerBottomSmall">
+        <b>
+           =20
+           =20
+                Mittleres
+           =20
+           =20
+        </b>
+        Risiko
+    </div>
+
+    <div class=3D"spacerBottomSmall">
+        <b>
+           =20
+           =20
+                Mittlere
+           =20
+           =20
+        </b>
+        gegenseitige Abh=C3=A4ngigkeit Ihrer Investments
+    </div>
+
+    <div class=3D"spacerBottomSmall small">
+        Einsch=C3=A4tzungen basieren auf historischen Kursen
+    </div>
+
+   =20
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fapp/tUt21S=
+gN/l9Iw/8G1XExDHmd#!/performance">
+            &raquo;&nbsp;Zur Depotanalyse
+        </a>
+   =20
+
+
+
+<h2>Rentablo Nutzer kauften diese Woche</h2>
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DMICROSOFT%2B%2B%2B%2BDL-%252C00000625%26is=
+in%3DUS5949181045%26tickerSymbol%3Dtts-9661678%26quoteProvider%3Dtte/t=
+kt21SgN/l9Iw/GblxuOrfT1">
+                &raquo;&nbsp;MICROSOFT    DL-,00000625
+                (US5949181045)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DAPPLE%2BINC.%26isin%3DUS0378331005%26ticke=
+rSymbol%3Dtts-9555757%26quoteProvider%3Dtte/t0t21SgN/l9Iw/WSfkw2LB6C">
+                &raquo;&nbsp;APPLE INC.
+                (US0378331005)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DBIONTECH%2BSE%2BSPON.%2BADRS%2B1%2BBioNTec=
+h%2BSE%26isin%3DUS09075V1026%26tickerSymbol%3Dtts-176159975%26quotePro=
+vider%3Dtte/uEt21SgN/l9Iw/qfCbqKsGsh">
+                &raquo;&nbsp;BIONTECH SE SPON. ADRS 1 BioNTech SE
+                (US09075V1026)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DALLIANZ%2BSE%26isin%3DDE0008404005%26ticke=
+rSymbol%3Dtts-9560485%26quoteProvider%3Dtte/uUt21SgN/l9Iw/rKnZ_KXvki">
+                &raquo;&nbsp;ALLIANZ SE
+                (DE0008404005)
+            </a>
+        </div>
+   =20
+
+   =20
+        <div class=3D"spacerBottomSmall">
+            <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fwatchl=
+istEntry%2Fpreview%3Fname%3DNVIDIA%2BCORP.%2B%2B%2B%2B%2B%2BDL-%252C00=
+1%26isin%3DUS67066G1040%26tickerSymbol%3Dtts-9679281%26quoteProvider%3=
+Dtte/ukt21SgN/l9Iw/42rLuEk742">
+                &raquo;&nbsp;NVIDIA CORP.      DL-,001
+                (US67066G1040)
+            </a>
+        </div>
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+   =20
+
+
+
+    <div class=3D"spacerBottom spacerTop">
+        <div class=3D"spacerBottom">
+            Wie oft m=C3=B6chten Sie Ihren Investment-Report erhalten?
+        </div>
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D1%26token%3DBU2nq4C9lnRBGHjlHd=
+1KSXnn%252F3Vfvx1x48BOPxSyY8ePI9cOsXxV5lNiBf2JFlJ0/u0t21SgN/l9Iw/h8pkL=
+SL14-">
+            &#91;&nbsp;W=C3=B6chentlich&nbsp;&#93;</a>
+        &nbsp;&nbsp;
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D2%26token%3DBU2nq4C9lnRBGHjlHd=
+1KSXnn%252F3Vfvx1x48BOPxSyY8ePI9cOsXxV5lNiBf2JFlJ0/vEt21SgN/l9Iw/5I441=
+a74RF">
+            &#91;&nbsp;Monatlich&nbsp;&#93;</a>
+        &nbsp;&nbsp;
+        <a href=3D"https://click.pstmrk.it/2s/rentablo.de%2Fprofile%2F=
+investmentReportFrequency%3Ffrequency%3D9%26token%3DBU2nq4C9lnRBGHjlHd=
+1KSXnn%252F3Vfvx1x48BOPxSyY8ePI9cOsXxV5lNiBf2JFlJ0/vUt21SgN/l9Iw/1MN8e=
+2iq8B">
+            &#91;&nbsp;Nie&nbsp;&#93;</a>
+    </div>
+
+
+
+                <p>
+                    <br/>
+                    Mit freundlichen Gr=C3=BC=C3=9Fen,<br/>
+                    <i>Ihr Rentablo-Team</i>
+                </p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class=3D"footer">
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" class=3D"footerContainer"
+           style=3D"border-collapse: collapse;">
+        <tr>
+            <td>
+                <div>
+                    Rentablo, eine Marke der wealthAPI GmbH -
+                    Fanny-Zobel-Str. 9,
+                    12435
+                    Berlin
+                </div>
+
+                <div>
+                    Tel: (0) 30 - 71 53 30 09
+                </div>
+
+                <div>
+                    Email: info@rentablo.de
+                </div>
+
+                <div>
+                    <a href=3D"https://click.pstmrk.it/2s/rentablo.de%=
+2Fimpressum/vkt21SgN/l9Iw/atZdFfao1e">Impressum</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<img src=3D"https://ea.pstmrk.it/open/v3_97AQNbd3BlaIWvj-9mBBXjMRVXd43=
+74w06TRFKpxmEY3z7JiuWgmNUqEI2LYwyjUxih1HzIlrokOD5kFBjgTjNPytH1TKC-_4mj=
+r0-UXNVPwnpJ7V5dcdxG7c2_jkr2C0OKT9jIhNvSjRB6m0xxue4O3y6HNmvL-jyYFviw6v=
+WN-6yYddohjkZwpqsY7iHTn_eL5j7WSHdndEFnKMhQL74Z8LLGr5hPujzUFahHhX_OES3E=
+CmE2bRxjEC8oiGudwKtgfDKkh_iWcRI5eOxSwjo_LPzCwUABkdA9N7OWPdH4YCFCT6PBq6=
+UiMMBtJOmiThZVUrXlDfxEGF7rboG1TMlXYWlM2jbTDQ-Dx_DodNqmHr1WuyneACtbiM7_=
+0NnWoERENgrG0zSXGVhXJe5xsshJqPrh-J9zS7Ms16E4V4CU" width=3D"1" height=3D=
+"1" border=3D"0" alt=3D"" /></body>
+</html>
+
+--mk3-b3fc37813ad14a9d95f0a0fe3b1f76f8--
