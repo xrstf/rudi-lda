@@ -72,7 +72,7 @@ func main() {
 	case "spamtest":
 		err = spamtestCommand(context.Background(), opt)
 	case "debug":
-		f, err := os.OpenFile(filepath.Join(opt.datadir, "debug.log"), os.O_CREATE|os.O_APPEND, 0600)
+		f, err := os.OpenFile(filepath.Join(opt.datadir, "debug.log"), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0600)
 		if err != nil {
 			log.Fatalf("Cannot open debug file: %v", err)
 		}
