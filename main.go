@@ -54,7 +54,12 @@ func main() {
 		log.Fatal("No command given, use one of deliver, spamtest, debug.")
 	}
 
-	err := opt.Validate()
+	err := opt.ApplyEnvironment()
+	if err != nil {
+		log.Fatalf("Invalid environment: %v", err)
+	}
+
+	err = opt.Validate()
 	if err != nil {
 		log.Fatalf("Invalid command line: %v", err)
 	}
