@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"go.xrstf.de/rudi"
 	"go.xrstf.de/rudi-contrib/set"
@@ -20,6 +21,10 @@ func ProcessMessage(ctx context.Context, scriptFile string, msg *email.Message, 
 	program, err := loadProgram(scriptFile)
 	if err != nil {
 		return nil, fmt.Errorf("invalid script: %w", err)
+	}
+
+	if program == nil {
+		return nil, nil
 	}
 
 	data, err := msg.ToJSON()
@@ -47,9 +52,16 @@ func loadProgram(scriptFile string) (rudi.Program, error) {
 		return nil, err
 	}
 
+	code := string(content)
+	code = strings.TrimSpace(code)
+
+	if len(code) == 0 {
+		return nil, nil
+	}
+
 	filename := filepath.Base(scriptFile)
 
-	return rudi.Parse(filename, string(content))
+	return rudi.Parse(filename, code)
 }
 
 func getFunctions() rudi.Functions {

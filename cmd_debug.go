@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"github.com/sirupsen/logrus"
+
 	rudilog "go.xrstf.de/rudi-lda/pkg/log"
 )
 

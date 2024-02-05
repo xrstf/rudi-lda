@@ -18,6 +18,7 @@ import (
 	"time"
 
 	"github.com/sirupsen/logrus"
+
 	"go.xrstf.de/rudi-lda/pkg/util"
 )
 

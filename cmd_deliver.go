@@ -13,6 +13,7 @@ import (
 	"strings"
 
 	"github.com/sirupsen/logrus"
+
 	"go.xrstf.de/rudi-lda/pkg/email"
 	"go.xrstf.de/rudi-lda/pkg/log"
 	"go.xrstf.de/rudi-lda/pkg/metrics"

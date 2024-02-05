@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 
 	"github.com/sirupsen/logrus"
+
 	"go.xrstf.de/rudi-lda/pkg/email"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 	"go.xrstf.de/rudi-lda/pkg/rudilib"

@@ -15,6 +15,7 @@ import (
 	"time"
 
 	"github.com/sirupsen/logrus"
+
 	"go.xrstf.de/rudi-lda/pkg/email"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 )
