@@ -91,6 +91,8 @@ func processMessage(ctx context.Context, logger logrus.FieldLogger, opt options,
 		err = processor.Process(ctx, logger, msg, metricsData)
 		if err != nil {
 			logger.WithError(err).Warn("Processor failed")
+		} else {
+			break
 		}
 	}
 
