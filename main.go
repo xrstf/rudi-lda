@@ -9,6 +9,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"runtime"
 	"slices"
 	"strings"
@@ -66,25 +67,30 @@ func main() {
 	case "spamtest":
 		err = spamtestCommand(context.Background(), opt)
 	case "debug":
-		fmt.Println("Options:")
-		fmt.Printf("  fromAddress: %q\n", opt.fromAddress)
-		fmt.Printf("  destAddress: %q\n", opt.destAddress)
-		fmt.Printf("  spamScript: %q\n", opt.spamScript)
-		fmt.Printf("  folderScript: %q\n", opt.folderScript)
-		fmt.Printf("  maildir: %q\n", opt.maildir)
-		fmt.Printf("  datadir: %q\n", opt.datadir)
-		fmt.Printf("  rentablo: %v\n", opt.rentablo)
-		fmt.Printf("  sunnyportal: %v\n", opt.sunnyportal)
-		fmt.Println("Environment:")
+		f, err := os.OpenFile(filepath.Join(opt.datadir, "debug.log"), os.O_CREATE|os.O_APPEND, 0600)
+		if err != nil {
+			log.Fatalf("Cannot open debug file: %v", err)
+		}
+		defer f.Close()
+		fmt.Fprintln(f, "Options:")
+		fmt.Fprintf(f, "  fromAddress: %q\n", opt.fromAddress)
+		fmt.Fprintf(f, "  destAddress: %q\n", opt.destAddress)
+		fmt.Fprintf(f, "  spamScript: %q\n", opt.spamScript)
+		fmt.Fprintf(f, "  folderScript: %q\n", opt.folderScript)
+		fmt.Fprintf(f, "  maildir: %q\n", opt.maildir)
+		fmt.Fprintf(f, "  datadir: %q\n", opt.datadir)
+		fmt.Fprintf(f, "  rentablo: %v\n", opt.rentablo)
+		fmt.Fprintf(f, "  sunnyportal: %v\n", opt.sunnyportal)
+		fmt.Fprintln(f, "Environment:")
 
 		env := os.Environ()
 		slices.Sort(env)
 
 		for _, e := range env {
-			fmt.Printf("  %s\n", e)
+			fmt.Fprintf(f, "  %s\n", e)
 		}
-		fmt.Println("stdin:")
-		io.Copy(os.Stdout, os.Stdin)
+		fmt.Fprintln(f, "stdin:")
+		io.Copy(f, os.Stdin)
 	default:
 		err = fmt.Errorf("unknown command %q", command)
 	}
