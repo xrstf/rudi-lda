@@ -30,6 +30,10 @@ func (p *Proc) Matches(ctx context.Context, logger logrus.FieldLogger, msg *emai
 		return false, fmt.Errorf("script failed: %w", err)
 	}
 
+	if result == nil {
+		return false, nil
+	}
+
 	if result.Status == spam.Spam {
 		logger.WithField("rule", result.Rule).Info("Dropping spam.")
 		return true, nil
