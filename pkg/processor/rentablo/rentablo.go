@@ -14,6 +14,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/sirupsen/logrus"
 	"go.xrstf.de/rudi-lda/pkg/email"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 )
@@ -36,11 +37,13 @@ func New(datadir string) *Proc {
 	}
 }
 
-func (p *Proc) Matches(_ context.Context, msg *email.Message) (bool, error) {
+func (p *Proc) Matches(_ context.Context, _ logrus.FieldLogger, msg *email.Message) (bool, error) {
 	return subjectRegex.MatchString(msg.GetSubject()), nil
 }
 
-func (p *Proc) Process(_ context.Context, msg *email.Message, _ *metrics.Metrics) error {
+func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.Message, _ *metrics.Metrics) error {
+	logger.Info("Handling rentablo.")
+
 	info, err := parseMessage(msg)
 	if err != nil {
 		return err

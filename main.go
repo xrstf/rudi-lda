@@ -6,15 +6,13 @@ package main
 import (
 	"context"
 	"fmt"
-	"io"
 	"log"
-	"os"
-	"path/filepath"
 	"runtime"
-	"slices"
 	"strings"
 
 	"github.com/spf13/pflag"
+
+	rudilog "go.xrstf.de/rudi-lda/pkg/log"
 )
 
 // These variables get set by ldflags during compilation.
@@ -54,48 +52,32 @@ func main() {
 		log.Fatal("No command given, use one of deliver, spamtest, debug.")
 	}
 
-	err := opt.ApplyEnvironment()
-	if err != nil {
+	var (
+		ctx = context.Background()
+		err error
+	)
+
+	if err = opt.ApplyEnvironment(); err != nil {
 		log.Fatalf("Invalid environment: %v", err)
 	}
 
-	err = opt.Validate()
-	if err != nil {
+	if err = opt.Validate(); err != nil {
 		log.Fatalf("Invalid command line: %v", err)
+	}
+
+	if err := rudilog.SetDirectory(opt.datadir); err != nil {
+		log.Fatalf("Invalid --datadir: %v", err)
 	}
 
 	command := strings.ToLower(pflag.Arg(0))
 
 	switch command {
 	case "deliver":
-		err = deliverCommand(context.Background(), opt)
+		err = deliverCommand(ctx, opt)
 	case "spamtest":
-		err = spamtestCommand(context.Background(), opt)
+		err = spamtestCommand(ctx, opt)
 	case "debug":
-		f, err := os.OpenFile(filepath.Join(opt.datadir, "debug.log"), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0600)
-		if err != nil {
-			log.Fatalf("Cannot open debug file: %v", err)
-		}
-		defer f.Close()
-		fmt.Fprintln(f, "Options:")
-		fmt.Fprintf(f, "  fromAddress: %q\n", opt.fromAddress)
-		fmt.Fprintf(f, "  destAddress: %q\n", opt.destAddress)
-		fmt.Fprintf(f, "  spamScript: %q\n", opt.spamScript)
-		fmt.Fprintf(f, "  folderScript: %q\n", opt.folderScript)
-		fmt.Fprintf(f, "  maildir: %q\n", opt.maildir)
-		fmt.Fprintf(f, "  datadir: %q\n", opt.datadir)
-		fmt.Fprintf(f, "  rentablo: %v\n", opt.rentablo)
-		fmt.Fprintf(f, "  sunnyportal: %v\n", opt.sunnyportal)
-		fmt.Fprintln(f, "Environment:")
-
-		env := os.Environ()
-		slices.Sort(env)
-
-		for _, e := range env {
-			fmt.Fprintf(f, "  %s\n", e)
-		}
-		fmt.Fprintln(f, "stdin:")
-		io.Copy(f, os.Stdin)
+		err = debugCommand(ctx, opt)
 	default:
 		err = fmt.Errorf("unknown command %q", command)
 	}

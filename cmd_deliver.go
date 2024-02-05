@@ -8,11 +8,13 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"path/filepath"
+	"strings"
 
+	"github.com/sirupsen/logrus"
 	"go.xrstf.de/rudi-lda/pkg/email"
+	"go.xrstf.de/rudi-lda/pkg/log"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 	"go.xrstf.de/rudi-lda/pkg/processor"
 	"go.xrstf.de/rudi-lda/pkg/processor/antispam"
@@ -60,22 +62,24 @@ func deliverCommand(ctx context.Context, opt options) error {
 		return fmt.Errorf("failed to parse mail body: %w", err)
 	}
 
+	logger := log.New("mails.log").WithFields(msg.LogFields()).WithField("destination", opt.destAddress)
+
 	metricsData.Valid++
 
-	if err := processMessage(ctx, opt, msg, metricsData); err != nil {
-		log.Printf("E-mail is unprocessable: %v", err)
+	if err := processMessage(ctx, logger, opt, msg, metricsData); err != nil {
+		logger.WithError(err).Warn("E-mail is unprocessable")
 	}
 
 	return nil
 }
 
-func processMessage(ctx context.Context, opt options, msg *email.Message, metricsData *metrics.Metrics) error {
+func processMessage(ctx context.Context, logger logrus.FieldLogger, opt options, msg *email.Message, metricsData *metrics.Metrics) error {
 	for _, processor := range getProcessors(opt) {
 		var matches bool
 
-		matches, err := processor.Matches(ctx, msg)
+		matches, err := processor.Matches(ctx, logger, msg)
 		if err != nil {
-			log.Printf("Warning: Processor matched failed: %v", err)
+			logger.WithError(err).Warn("Processor matched failed")
 			continue
 		}
 
@@ -83,9 +87,9 @@ func processMessage(ctx context.Context, opt options, msg *email.Message, metric
 			continue
 		}
 
-		err = processor.Process(ctx, msg, metricsData)
+		err = processor.Process(ctx, logger, msg, metricsData)
 		if err != nil {
-			log.Printf("Warning: Processor failed: %v", err)
+			logger.WithError(err).Warn("Processor failed")
 		}
 	}
 
@@ -93,6 +97,9 @@ func processMessage(ctx context.Context, opt options, msg *email.Message, metric
 }
 
 func getProcessors(opt options) []processor.Processor {
+	// assemble the path to the destination user's maildir
+	userMaildir := getDestinationMaildir(opt)
+
 	var processors []processor.Processor
 
 	if opt.rentablo {
@@ -108,11 +115,17 @@ func getProcessors(opt options) []processor.Processor {
 	}
 
 	// maildir will always match any e-mail
-	processors = append(processors, maildir.New(opt.maildir, opt.folderScript))
+	processors = append(processors, maildir.New(userMaildir, opt.folderScript))
 
 	// in case any of the above fail, this one will dump the email for later debugging;
 	// this processor never returns an error
 	processors = append(processors, recovery.New(opt.datadir))
 
 	return processors
+}
+
+func getDestinationMaildir(opt options) string {
+	parts := strings.Split(opt.destAddress, "@")
+
+	return filepath.Join(opt.maildir, parts[0])
 }

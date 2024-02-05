@@ -17,6 +17,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/sirupsen/logrus"
 	"go.xrstf.de/rudi-lda/pkg/util"
 )
 
@@ -24,6 +25,24 @@ type Message struct {
 	Header mail.Header
 	Body   string
 	raw    []byte
+}
+
+func (m *Message) LogFields() logrus.Fields {
+	fields := logrus.Fields{
+		"subject": m.GetSubject(),
+	}
+
+	if from := m.GetFrom(); from != nil {
+		fields["fromName"] = util.DecodeQuotedPrintable(from.Name)
+		fields["fromAddress"] = from.Address
+	}
+
+	if to := m.GetTo(); to != nil {
+		fields["toName"] = util.DecodeQuotedPrintable(to.Name)
+		fields["toAddress"] = to.Address
+	}
+
+	return fields
 }
 
 func (m *Message) Raw() []byte {
