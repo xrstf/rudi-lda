@@ -10,6 +10,8 @@ import (
 )
 
 type options struct {
+	fromAddress  string
+	destAddress  string
 	spamScript   string
 	folderScript string
 	maildir      string
@@ -20,6 +22,8 @@ type options struct {
 }
 
 func (o *options) AddFlags(fs *pflag.FlagSet) {
+	fs.StringVarP(&o.fromAddress, "from", "f", o.fromAddress, "from address")
+	fs.StringVarP(&o.destAddress, "destination", "d", o.destAddress, "destination address")
 	fs.StringVar(&o.spamScript, "spam-script", o.spamScript, "Rudi script that will be evaluated to determine if the incoming e-mail is spam ($RUDILDA_SPAM_SCRIPT).")
 	fs.StringVar(&o.folderScript, "folder-script", o.folderScript, "Rudi script that will be evaluated to determine the target folder for an incoming e-mail ($RUDILDA_FOLDER_SCRIPT).")
 	fs.StringVar(&o.maildir, "maildir", o.maildir, "Path to the root of the user's Maildir directory ($RUDILDA_MAILDIR).")

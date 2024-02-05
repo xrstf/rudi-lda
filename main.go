@@ -6,8 +6,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
 	"log"
+	"os"
 	"runtime"
+	"slices"
 	"strings"
 
 	"github.com/spf13/pflag"
@@ -47,7 +50,7 @@ func main() {
 	}
 
 	if pflag.NArg() == 0 {
-		log.Fatal("No command given, use one of deliver, spamtest.")
+		log.Fatal("No command given, use one of deliver, spamtest, debug.")
 	}
 
 	err := opt.Validate()
@@ -62,6 +65,26 @@ func main() {
 		err = deliverCommand(context.Background(), opt)
 	case "spamtest":
 		err = spamtestCommand(context.Background(), opt)
+	case "debug":
+		fmt.Println("Options:")
+		fmt.Printf("  fromAddress: %q\n", opt.fromAddress)
+		fmt.Printf("  destAddress: %q\n", opt.destAddress)
+		fmt.Printf("  spamScript: %q\n", opt.spamScript)
+		fmt.Printf("  folderScript: %q\n", opt.folderScript)
+		fmt.Printf("  maildir: %q\n", opt.maildir)
+		fmt.Printf("  datadir: %q\n", opt.datadir)
+		fmt.Printf("  rentablo: %v\n", opt.rentablo)
+		fmt.Printf("  sunnyportal: %v\n", opt.sunnyportal)
+		fmt.Println("Environment:")
+
+		env := os.Environ()
+		slices.Sort(env)
+
+		for _, e := range env {
+			fmt.Printf("  %s\n", e)
+		}
+		fmt.Println("stdin:")
+		io.Copy(os.Stdout, os.Stdin)
 	default:
 		err = fmt.Errorf("unknown command %q", command)
 	}
