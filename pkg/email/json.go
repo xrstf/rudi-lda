@@ -21,6 +21,13 @@ type JSONMessage struct {
 }
 
 func addressToJSON(addr *mail.Address) map[string]any {
+	if addr == nil {
+		return map[string]any{
+			"name":    "",
+			"address": "",
+		}
+	}
+
 	return map[string]any{
 		"name":    addr.Name,
 		"address": addr.Address,
@@ -29,13 +36,8 @@ func addressToJSON(addr *mail.Address) map[string]any {
 
 func (m *Message) ToJSON() (any, error) {
 	rm := JSONMessage{}
-	if f := m.GetFrom(); f != nil {
-		rm.From = addressToJSON(f)
-	}
-	if f := m.GetTo(); f != nil {
-		rm.To = addressToJSON(f)
-	}
-
+	rm.From = addressToJSON(m.GetFrom())
+	rm.To = addressToJSON(m.GetTo())
 	rm.Subject = m.GetSubject()
 	rm.ReplyTo = addressToJSON(m.GetReplyTo())
 	rm.DeliveredTo = addressToJSON(m.GetDeliveredTo())
