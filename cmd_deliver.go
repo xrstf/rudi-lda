@@ -10,6 +10,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 
 	"github.com/sirupsen/logrus"
@@ -93,7 +94,7 @@ func processMessage(ctx context.Context, logger logrus.FieldLogger, opt options,
 func tryProcessor(ctx context.Context, logger logrus.FieldLogger, proc processor.Processor, msg *email.Message, metricsData *metrics.Metrics) (done bool, err error) {
 	defer func() {
 		if p := recover(); p != nil {
-			err = fmt.Errorf("processor panicked: %v", err)
+			err = fmt.Errorf("processor panicked: %v: %s", err, debug.Stack())
 			done = false
 		}
 	}()

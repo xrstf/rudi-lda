@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 
 	"go.xrstf.de/rudi"
@@ -34,7 +35,7 @@ func ProcessMessage(ctx context.Context, scriptFile string, msg *email.Message, 
 
 	defer func() {
 		if p := recover(); p != nil {
-			err = fmt.Errorf("Rudi panicked: %v", err)
+			err = fmt.Errorf("Rudi panicked: %v: %s", err, debug.Stack())
 			result = nil
 		}
 	}()
