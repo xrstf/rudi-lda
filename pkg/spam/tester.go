@@ -7,7 +7,6 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 
 	"go.xrstf.de/rudi-lda/pkg/email"
 	"go.xrstf.de/rudi-lda/pkg/rudilib"
@@ -29,7 +28,7 @@ type Result struct {
 func Check(ctx context.Context, scriptFile string, msg *email.Message) (*Result, error) {
 	result, err := rudilib.ProcessMessage(ctx, scriptFile, msg, nil, Functions)
 	if err != nil {
-		return nil, fmt.Errorf("script failed: %w", err)
+		return nil, err
 	}
 
 	return parseResult(result), nil

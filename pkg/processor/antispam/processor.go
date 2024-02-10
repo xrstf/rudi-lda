@@ -5,7 +5,6 @@ package antispam
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/sirupsen/logrus"
 
@@ -27,7 +26,7 @@ func New(scriptFile string) *Proc {
 func (p *Proc) Matches(ctx context.Context, logger logrus.FieldLogger, msg *email.Message) (bool, error) {
 	result, err := spam.Check(ctx, p.scriptFile, msg)
 	if err != nil {
-		return false, fmt.Errorf("script failed: %w", err)
+		return false, err
 	}
 
 	if result == nil {
