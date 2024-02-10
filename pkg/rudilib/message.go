@@ -17,7 +17,7 @@ import (
 	"go.xrstf.de/rudi-lda/pkg/email"
 )
 
-func ProcessMessage(ctx context.Context, scriptFile string, msg *email.Message, extraVars rudi.Variables, extraFuncs rudi.Functions) (any, error) {
+func ProcessMessage(ctx context.Context, scriptFile string, msg *email.Message, extraVars rudi.Variables, extraFuncs rudi.Functions) (result any, err error) {
 	program, err := loadProgram(scriptFile)
 	if err != nil {
 		return nil, fmt.Errorf("invalid script: %w", err)
@@ -32,7 +32,14 @@ func ProcessMessage(ctx context.Context, scriptFile string, msg *email.Message, 
 		return nil, fmt.Errorf("cannot turn e-mail into raw data: %w", err)
 	}
 
-	_, result, err := program.Run(
+	defer func() {
+		if p := recover(); p != nil {
+			err = fmt.Errorf("Rudi panicked: %v", err)
+			result = nil
+		}
+	}()
+
+	_, result, err = program.Run(
 		ctx,
 		data,
 		rudi.NewVariables().SetMany(extraVars),

@@ -36,7 +36,7 @@ func (p *Proc) Matches(_ context.Context, logger logrus.FieldLogger, _ *email.Me
 func (p *Proc) Process(ctx context.Context, logger logrus.FieldLogger, msg *email.Message, metricsData *metrics.Metrics) error {
 	folder, err := p.determineFolder(ctx, msg)
 	if err != nil {
-		return fmt.Errorf("failed to determine destination folder: %w", err)
+		logger.WithError(err).Error("Failed to determine folder.")
 	}
 
 	destinationDir := p.mailDirectory

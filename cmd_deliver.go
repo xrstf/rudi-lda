@@ -76,27 +76,43 @@ func deliverCommand(ctx context.Context, opt options) error {
 
 func processMessage(ctx context.Context, logger logrus.FieldLogger, opt options, msg *email.Message, metricsData *metrics.Metrics) error {
 	for _, processor := range getProcessors(opt) {
-		var matches bool
-
-		matches, err := processor.Matches(ctx, logger, msg)
-		if err != nil {
-			logger.WithError(err).Warn("Processor matched failed")
-			continue
-		}
-
-		if !matches {
-			continue
-		}
-
-		err = processor.Process(ctx, logger, msg, metricsData)
+		done, err := tryProcessor(ctx, logger, processor, msg, metricsData)
 		if err != nil {
 			logger.WithError(err).Warn("Processor failed")
-		} else {
+			continue
+		}
+
+		if done {
 			break
 		}
 	}
 
 	return nil
+}
+
+func tryProcessor(ctx context.Context, logger logrus.FieldLogger, proc processor.Processor, msg *email.Message, metricsData *metrics.Metrics) (done bool, err error) {
+	defer func() {
+		if p := recover(); p != nil {
+			err = fmt.Errorf("processor panicked: %v", err)
+			done = false
+		}
+	}()
+
+	matches, err := proc.Matches(ctx, logger, msg)
+	if err != nil {
+		return false, fmt.Errorf("matching failed: %w", err)
+	}
+
+	if !matches {
+		return false, nil
+	}
+
+	err = proc.Process(ctx, logger, msg, metricsData)
+	if err != nil {
+		return false, fmt.Errorf("processor failed: %w", err)
+	}
+
+	return true, nil
 }
 
 func getProcessors(opt options) []processor.Processor {
