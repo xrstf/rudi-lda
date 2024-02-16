@@ -17,12 +17,12 @@ import (
 )
 
 type Proc struct {
-	datadir string
+	dumpDir string
 }
 
-func New(datadir string) *Proc {
+func New(dumpDir string) *Proc {
 	return &Proc{
-		datadir: datadir,
+		dumpDir: dumpDir,
 	}
 }
 
@@ -33,13 +33,12 @@ func (p *Proc) Matches(_ context.Context, _ logrus.FieldLogger, _ *email.Message
 func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.Message, _ *metrics.Metrics) error {
 	logger.Info("Recovering unprocessable e-mail.")
 
-	directory := filepath.Join(p.datadir, "unprocessable")
-	if err := os.MkdirAll(directory, 0755); err != nil {
+	if err := os.MkdirAll(p.dumpDir, 0775); err != nil {
 		log.Printf("Error: cannot create recovery directory: %v", err)
 		return nil
 	}
 
-	filename := filepath.Join(directory, util.Filename())
+	filename := filepath.Join(p.dumpDir, util.Filename())
 
 	if err := os.WriteFile(filename, msg.Raw(), 0600); err != nil {
 		log.Printf("Error: failed to write file: %v", err)

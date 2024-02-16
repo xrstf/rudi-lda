@@ -209,7 +209,7 @@ func getProcessors(opt *Options) []processor.Processor {
 	}
 
 	if opt.SpamScript != "" {
-		processors = append(processors, antispam.New(opt.SpamScript))
+		processors = append(processors, antispam.New(opt.SpamScript, filepath.Join(opt.DataDir, "spam")))
 	}
 
 	// maildir will always match any e-mail
@@ -217,7 +217,7 @@ func getProcessors(opt *Options) []processor.Processor {
 
 	// in case any of the above fail, this one will dump the email for later debugging;
 	// this processor never returns an error
-	processors = append(processors, recovery.New(opt.DataDir))
+	processors = append(processors, recovery.New(filepath.Join(opt.DataDir, "unprocessable")))
 
 	return processors
 }
