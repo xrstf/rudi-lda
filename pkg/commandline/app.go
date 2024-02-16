@@ -37,10 +37,17 @@ func NewApp(buildTag, buildCommit, buildDate string) *cli.Command {
 
 	cli.VersionPrinter = newVersionPrinter(buildTag, buildCommit, buildDate)
 
+	// Having an empty Version would disable the --version flag,
+	// which we do not want to just lose.
+	version := buildTag
+	if version == "" {
+		version = "dev"
+	}
+
 	return &cli.Command{
 		Name:    "rudi-lda",
 		Usage:   "Filter e-mails with Rudi and deliver them to Maildirs++",
-		Version: buildTag,
+		Version: version,
 		Commands: []*cli.Command{
 			deliver.Command(opt),
 			spamtest.Command(opt),
