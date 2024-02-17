@@ -26,6 +26,21 @@ Usage of rudi-lda:
   -V, --version                Show version info and exit immediately.
 ```
 
+### chasquid
+
+To use Rudi-LDA as your MDA in [chasquid](https://blitiri.com.ar/p/chasquid/), update your
+`chasquid.conf` and set
+
+```yaml
+mail_delivery_agent_bin: "rudi-lda"
+
+mail_delivery_agent_args: "deliver"
+mail_delivery_agent_args: "-f"
+mail_delivery_agent_args: "%from%"
+mail_delivery_agent_args: "-d"
+mail_delivery_agent_args: "%to_user%"
+```
+
 ## License
 
 MIT
