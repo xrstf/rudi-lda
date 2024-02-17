@@ -13,7 +13,6 @@ import (
 	"mime/quotedprintable"
 	"net/mail"
 	"net/textproto"
-	"regexp"
 	"strings"
 	"time"
 
@@ -24,6 +23,21 @@ type Message struct {
 	Header mail.Header
 	Body   string
 	raw    []byte
+}
+
+func ParseMessage(rawMessage []byte) (*Message, error) {
+	msg, err := mail.ReadMessage(bytes.NewReader(rawMessage))
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse mail body: %v", err)
+	}
+
+	body, _ := io.ReadAll(msg.Body)
+
+	return &Message{
+		Header: msg.Header,
+		Body:   string(body),
+		raw:    rawMessage,
+	}, nil
 }
 
 func (m *Message) LogFields() logrus.Fields {
@@ -109,15 +123,6 @@ func (m *Message) GetDeliveredTo() *mail.Address {
 	return nil
 }
 
-func (m *Message) GetTos() []*mail.Address {
-	list, err := m.Header.AddressList("To")
-	if err != nil {
-		return nil
-	}
-
-	return list
-}
-
 func (m *Message) getAddress(header string) *mail.Address {
 	list, err := m.Header.AddressList(header)
 	if err != nil || len(list) == 0 {
@@ -125,136 +130,6 @@ func (m *Message) getAddress(header string) *mail.Address {
 	}
 
 	return list[0]
-}
-
-func ParseMessage(rawMessage []byte) (*Message, error) {
-	msg, err := mail.ReadMessage(bytes.NewReader(rawMessage))
-	if err != nil {
-		return nil, fmt.Errorf("failed to parse mail body: %v", err)
-	}
-
-	body, _ := io.ReadAll(msg.Body)
-
-	return &Message{
-		Header: msg.Header,
-		Body:   string(body),
-		raw:    rawMessage,
-	}, nil
-}
-
-func (m *Message) BodyContainsAnyOf(needles ...string) bool {
-	return stringContainsAnyOf(m.Body, needles...)
-}
-
-func (m *Message) SubjectContainsAnyOf(needles ...string) bool {
-	return m.HeaderContainsAnyOf("Subject", needles...)
-}
-
-func (m *Message) HeaderContainsAnyOf(header string, needles ...string) bool {
-	return stringContainsAnyOf(decodeQuotedPrintable(m.Header.Get(header)), needles...)
-}
-
-func stringContainsAnyOf(haystack string, needles ...string) bool {
-	for _, needle := range needles {
-		if strings.Contains(haystack, needle) {
-			return true
-		}
-	}
-
-	return false
-}
-
-func (m *Message) BodyMatchesAnyOf(needles ...string) bool {
-	return stringMatchesAnyOf(m.Body, needles...)
-}
-
-func (m *Message) SubjectMatchesAnyOf(needles ...string) bool {
-	return m.HeaderMatchesAnyOf("Subject", needles...)
-}
-
-func (m *Message) HeaderMatchesAnyOf(header string, needles ...string) bool {
-	return stringMatchesAnyOf(decodeQuotedPrintable(m.Header.Get(header)), needles...)
-}
-
-func stringMatchesAnyOf(haystack string, needles ...string) bool {
-	for _, needle := range needles {
-		if regexp.MustCompile(needle).MatchString(haystack) {
-			return true
-		}
-	}
-
-	return false
-}
-
-func (m *Message) IsToName(names ...string) bool {
-	return m.IsHeaderName("To", names...)
-}
-
-func (m *Message) IsFromName(names ...string) bool {
-	return m.IsHeaderName("From", names...)
-}
-
-func (m *Message) IsHeaderName(header string, names ...string) bool {
-	list, err := m.Header.AddressList(header)
-	if err != nil || len(list) == 0 {
-		return false
-	}
-
-	for _, name := range names {
-		if strings.EqualFold(decodeQuotedPrintable(list[0].Name), name) {
-			return true
-		}
-	}
-
-	return false
-}
-
-func (m *Message) IsToAddress(addresses ...string) bool {
-	return m.IsHeaderAddress("To", addresses...)
-}
-
-func (m *Message) IsFromAddress(addresses ...string) bool {
-	return m.IsHeaderAddress("From", addresses...)
-}
-
-func (m *Message) IsHeaderAddress(header string, addresses ...string) bool {
-	list, err := m.Header.AddressList(header)
-	if err != nil || len(list) == 0 {
-		return false
-	}
-
-	for _, address := range addresses {
-		if strings.EqualFold(list[0].Address, address) {
-			return true
-		}
-	}
-
-	return false
-}
-
-func (m *Message) IsFromDomain(domains ...string) bool {
-	return m.IsHeaderDomain("From", domains...)
-}
-
-func (m *Message) IsReplyToDomain(domains ...string) bool {
-	return m.IsHeaderDomain("Reply-To", domains...)
-}
-
-func (m *Message) IsHeaderDomain(header string, domains ...string) bool {
-	list, err := m.Header.AddressList(header)
-	if err != nil || len(list) == 0 {
-		return false
-	}
-
-	address := strings.ToLower(list[0].Address)
-
-	for _, domain := range domains {
-		if strings.HasSuffix(address, "@"+strings.ToLower(domain)) {
-			return true
-		}
-	}
-
-	return false
 }
 
 // based on https://github.com/kirabou/parseMIMEemail.go/blob/master/parseMIMEmail.go
