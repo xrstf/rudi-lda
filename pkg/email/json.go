@@ -18,6 +18,7 @@ type JSONMessage struct {
 	Subject     string         `json:"subject"`
 	Date        time.Time      `json:"date"`
 	Body        string         `json:"body"`
+	Headers     mail.Header    `json:"headers"`
 }
 
 func addressToJSON(addr *mail.Address) map[string]any {
@@ -42,6 +43,7 @@ func (m *Message) ToJSON() (any, error) {
 	rm.ReplyTo = addressToJSON(m.GetReplyTo())
 	rm.DeliveredTo = addressToJSON(m.GetDeliveredTo())
 	rm.Body = m.Body
+	rm.Headers = m.Header
 
 	date, err := m.GetDate()
 	if err != nil {

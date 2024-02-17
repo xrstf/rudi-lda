@@ -6,6 +6,7 @@ package rudilib
 import (
 	"errors"
 	"fmt"
+	"net/mail"
 	"regexp"
 	"strings"
 
@@ -17,6 +18,7 @@ var Functions = rudi.Functions{
 	"domain":   rudi.NewFunctionBuilder(domainFunc).WithDescription("returns the domain portion of the address' email").Build(),
 	"user":     rudi.NewFunctionBuilder(userFunc).WithDescription("returns the user portion of the address' email").Build(),
 	"matches?": rudi.NewFunctionBuilder(matchesFunc).WithDescription("returns true if the first value matches any of the given expressions").Build(),
+	"header":   rudi.NewFunctionBuilder(headerFunc).WithDescription("returns the first value for the given header or an empty string if the header is not set").Build(),
 }
 
 func domainFunc(val any) (any, error) {
@@ -78,4 +80,14 @@ func stringSetToAnys(s sets.Set[string]) []any {
 		result = append(result, value)
 	}
 	return result
+}
+
+func headerFunc(msg any, name string) (any, error) {
+	if thing, ok := msg.(map[string]any); ok {
+		if headers, ok := thing["headers"].(mail.Header); ok {
+			return headers.Get(name), nil
+		}
+	}
+
+	return nil, errors.New("cannot deal with provided value")
 }
