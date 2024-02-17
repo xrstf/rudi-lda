@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 
 	"go.xrstf.de/rudi-lda/pkg/email"
-	"go.xrstf.de/rudi-lda/pkg/util"
+	"go.xrstf.de/rudi-lda/pkg/fs"
 )
 
 type Maildir struct {
@@ -38,14 +38,14 @@ func (m *Maildir) Deliver(folder string, msg *email.Message) error {
 	}
 
 	// create temporary file first
-	tmpFile, err := util.WriteEmail(filepath.Join(destinationDir, "tmp"), msg)
+	tmpFile, err := fs.WriteEmail(filepath.Join(destinationDir, "tmp"), msg)
 	if err != nil {
 		return fmt.Errorf("failed to write temp file: %w", err)
 	}
 
 	// ensure ./new exists
 	newDir := filepath.Join(destinationDir, "new")
-	if err := os.MkdirAll(newDir, util.DirectoryPermissions); err != nil {
+	if err := os.MkdirAll(newDir, fs.DirectoryPermissions); err != nil {
 		return fmt.Errorf("failed to ensure new directory: %w", err)
 	}
 
@@ -60,7 +60,7 @@ func (m *Maildir) Deliver(folder string, msg *email.Message) error {
 		markerFile := filepath.Join(destinationDir, "maildirfolder")
 
 		if _, err := os.Stat(markerFile); err != nil {
-			if err := os.WriteFile(markerFile, nil, util.FilePermissions); err != nil {
+			if err := os.WriteFile(markerFile, nil, fs.FilePermissions); err != nil {
 				return fmt.Errorf("failed to mark: %w", err)
 			}
 		}

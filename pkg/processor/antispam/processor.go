@@ -10,9 +10,9 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"go.xrstf.de/rudi-lda/pkg/email"
+	"go.xrstf.de/rudi-lda/pkg/fs"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 	"go.xrstf.de/rudi-lda/pkg/spam"
-	"go.xrstf.de/rudi-lda/pkg/util"
 )
 
 type Proc struct {
@@ -56,7 +56,7 @@ func (p *Proc) Process(ctx context.Context, logger logrus.FieldLogger, msg *emai
 		metrics.SpamRules[p.matchedRule]++
 
 		if p.backupDir != "" {
-			if _, err := util.WriteEmail(p.backupDir, msg); err != nil {
+			if _, err := fs.WriteEmail(p.backupDir, msg); err != nil {
 				logger.WithError(err).Error("Failed to backup spam e-mail: %w", err)
 				// if we cannot backup spam, we must deliver it to the inbodx to prevent data loss
 				return false, msg, nil

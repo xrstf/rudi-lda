@@ -14,6 +14,7 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"go.xrstf.de/rudi-lda/pkg/email"
+	"go.xrstf.de/rudi-lda/pkg/fs"
 	"go.xrstf.de/rudi-lda/pkg/log"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 	"go.xrstf.de/rudi-lda/pkg/processor"
@@ -21,7 +22,6 @@ import (
 	"go.xrstf.de/rudi-lda/pkg/processor/maildir"
 	"go.xrstf.de/rudi-lda/pkg/processor/rentablo"
 	"go.xrstf.de/rudi-lda/pkg/processor/sunnyportal"
-	"go.xrstf.de/rudi-lda/pkg/util"
 )
 
 func action(ctx context.Context, opt *Options) error {
@@ -69,7 +69,7 @@ func action(ctx context.Context, opt *Options) error {
 		logger.WithError(err).Error("E-mail is unprocessable")
 
 		// try to backup the e-mail for further debugging
-		if _, err := util.WriteEmail(filepath.Join(opt.DataDir, "unprocessable"), newMsg); err != nil {
+		if _, err := fs.WriteEmail(filepath.Join(opt.DataDir, "unprocessable"), newMsg); err != nil {
 			logger.WithError(err).Error("Failed to backup e-mail, too.")
 		}
 	}
@@ -100,7 +100,7 @@ func getProcessors(opt *Options) []processor.Processor {
 		processors = append(processors, antispam.New(opt.SpamScript, backupDir))
 	}
 
-	// maildir will always match any e-mail
+	// maildir will always consume any e-mail
 	processors = append(processors, maildir.New(userMaildir, opt.FolderScript))
 
 	return processors

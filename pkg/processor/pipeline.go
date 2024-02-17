@@ -35,7 +35,7 @@ func Pipeline(ctx context.Context, logger logrus.FieldLogger, processors []Proce
 			}
 
 			// processor failed and mail is not consumed, so we continue with the next processor
-			logger.WithError(err).Error("Processor failed")
+			logger.WithField("processor", processor.Name()).WithError(err).Error("Processor failed")
 			continue
 		}
 

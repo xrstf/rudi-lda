@@ -6,13 +6,13 @@ import (
 	"path/filepath"
 
 	"github.com/sirupsen/logrus"
-	"go.xrstf.de/rudi-lda/pkg/util"
+	"go.xrstf.de/rudi-lda/pkg/fs"
 )
 
 var directory = ""
 
 func SetDirectory(dirname string) error {
-	if err := os.MkdirAll(dirname, util.DirectoryPermissions); err != nil {
+	if err := os.MkdirAll(dirname, fs.DirectoryPermissions); err != nil {
 		return err
 	}
 
@@ -22,7 +22,7 @@ func SetDirectory(dirname string) error {
 }
 
 func New(filename string) *logrus.Logger {
-	f, err := os.OpenFile(filepath.Join(directory, filename), os.O_RDWR|os.O_CREATE|os.O_APPEND, util.FilePermissions)
+	f, err := os.OpenFile(filepath.Join(directory, filename), os.O_RDWR|os.O_CREATE|os.O_APPEND, fs.FilePermissions)
 	if err != nil {
 		log.Fatalf("Cannot open log file %q: %v", filename, err)
 	}
