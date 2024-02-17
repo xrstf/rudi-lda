@@ -1,0 +1,109 @@
+Received-SPF: pass (matched ip)
+Received: from [192.30.252.201] (out-18.smtp.github.com)
+	by mailserver.example.com (chasquid) with ESMTPS
+	tls TLS_AES_128_GCM_SHA256
+	(over SMTP, TLS-1.3, envelope from "noreply@github.com")
+	; Sat, 17 Feb 2024 15:20:18 +0000
+Received: from github.com (hubbernetes-node-968e6f3.va3-iad.github.net [10.48.200.69])
+	by smtp.github.com (Postfix) with ESMTPA id EB8EAE095D
+	for <recipient@example.com>; Sat, 17 Feb 2024 07:20:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2023; t=1708183217;
+	bh=+gZbFSeN5d7dULWdHME4rERZ1kOIiFzqfXhVTpNz15Q=;
+	h=Date:From:Reply-To:To:Cc:In-Reply-To:References:Subject:List-ID:
+	 List-Archive:List-Post:List-Unsubscribe:List-Unsubscribe-Post:
+	 From;
+	b=gv8TyGt6UZ6Rcfn5QSvvB3+RdVUBc7IiPPUKKV9lO5trEYbSzFw32cSWK6QQmpa9G
+	 7VVDUtlG3YD/QioGVao1fF1WLpAWEiWc+xA1bms6VE5o0jeaFo+PhxBQOTR208O+MT
+	 4xVtS1QDxeeiumhQX0skiI90wCvD1nLQsdrucuEM=
+Date: Sat, 17 Feb 2024 07:20:16 -0800
+From: SomeGithubUser <notifications@github.com>
+Reply-To: black7375/Firefox-UI-Fix <reply+LONGTOKENHERE@reply.github.com>
+To: black7375/Firefox-UI-Fix <Firefox-UI-Fix@noreply.github.com>
+Cc: Ikser Erstieff <recipient@example.com>,
+ Comment <comment@noreply.github.com>
+Message-ID: <black7375/Firefox-UI-Fix/issue/868/issue_event/11836669371@github.com>
+In-Reply-To: <black7375/Firefox-UI-Fix/issues/868@github.com>
+References: <black7375/Firefox-UI-Fix/issues/868@github.com>
+Subject: Re: [black7375/Firefox-UI-Fix] Theme can't apply (Issue #868)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_65d0ceb0e9417_95175c5677e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: SomeGithubUser
+X-GitHub-Recipient: xrstf
+X-GitHub-Reason: comment
+List-ID: black7375/Firefox-UI-Fix <Firefox-UI-Fix.black7375.github.com>
+List-Archive: https://github.com/black7375/Firefox-UI-Fix
+List-Post: <mailto:reply+LONGTOKENHERE@reply.github.com>
+List-Unsubscribe: <mailto:unsub+LONGTOKENHERE@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/one-click/LONGTOKENHERE>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Auto-Response-Suppress: All
+destinations: recipient@example.com
+X-GitHub-Recipient-Address: recipient@example.com
+
+
+----==_mimepart_65d0ceb0e9417_95175c5677e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Closed #868 as completed.
+
+--
+Reply to this email directly or view it on GitHub:
+https://github.com/black7375/Firefox-UI-Fix/issues/868#event-11836669371
+You are receiving this because you commented.
+
+Message ID: <black7375/Firefox-UI-Fix/issue/868/issue_event/11836669371@github.com>
+----==_mimepart_65d0ceb0e9417_95175c5677e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p></p>
+<p dir=3D"auto">Closed <a class=3D"issue-link js-issue-link" data-error-t=
+ext=3D"Failed to load title" data-id=3D"2119864519" data-permission-text=3D=
+"Title is private" data-url=3D"https://github.com/black7375/Firefox-UI-Fi=
+x/issues/868" data-hovercard-type=3D"issue" data-hovercard-url=3D"/black7=
+375/Firefox-UI-Fix/issues/868/hovercard" href=3D"https://github.com/black=
+7375/Firefox-UI-Fix/issues/868">#868</a> as completed.</p>
+
+<p style=3D"font-size:small;-webkit-text-size-adjust:none;color:#666;">&m=
+dash;<br />Reply to this email directly, <a href=3D"https://github.com/bl=
+ack7375/Firefox-UI-Fix/issues/868#event-11836669371">view it on GitHub</a=
+>, or <a href=3D"https://github.com/notifications/unsubscribe-auth/AAA7EC=
+FIV3GK3TUJZXXI2LGNFRWC5DJN5XDWMJRHAZTMNRWHEZTOMI">unsubscribe</a>.<br />Y=
+ou are receiving this because you commented.<img src=3D"https://github.co=
+WGG33NNVSW45C7OR4XAZNWJFZXG5LFIV3GK3TUJZXXI2LGNFRWC5DJN5XKUY3PNVWWK3TUL5U=
+WJTYAAAAAFQMFHW5Q.gif" height=3D"1" width=3D"1" alt=3D"" /><span style=3D=
+"color: transparent; font-size: 0; display: none; visibility: hidden; ove=
+rflow: hidden; opacity: 0; width: 0; height: 0; max-width: 0; max-height:=
+ 0; mso-hide: all">Message ID: <span>&lt;black7375/Firefox-UI-Fix/issue/8=
+68/issue_event/11836669371</span><span>@</span><span>github</span><span>.=
+</span><span>com&gt;</span></span></p>
+<script type=3D"application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/black7375/Firefox-UI-Fix/issues/868#event-1=
+1836669371",
+"url": "https://github.com/black7375/Firefox-UI-Fix/issues/868#event-1183=
+6669371",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>=
+
+----==_mimepart_65d0ceb0e9417_95175c5677e--
