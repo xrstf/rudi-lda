@@ -32,7 +32,7 @@ func newVersionPrinter(buildTag, buildCommit, buildDate string) func(cmd *cli.Co
 	}
 }
 
-func NewApp(buildTag, buildCommit, buildDate string) *cli.Command {
+func New(buildTag, buildCommit, buildDate string) *cli.Command {
 	opt := &options.CommonOptions{}
 
 	cli.VersionPrinter = newVersionPrinter(buildTag, buildCommit, buildDate)

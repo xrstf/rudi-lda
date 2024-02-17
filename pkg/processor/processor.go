@@ -13,6 +13,6 @@ import (
 )
 
 type Processor interface {
-	Matches(ctx context.Context, logger logrus.FieldLogger, msg *email.Message) (bool, error)
-	Process(ctx context.Context, logger logrus.FieldLogger, msg *email.Message, metricsData *metrics.Metrics) error
+	Name() string
+	Process(ctx context.Context, logger logrus.FieldLogger, msg *email.Message, metricsData *metrics.Metrics) (consumed bool, updated *email.Message, err error)
 }

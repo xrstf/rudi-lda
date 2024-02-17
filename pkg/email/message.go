@@ -18,8 +18,6 @@ import (
 	"time"
 
 	"github.com/sirupsen/logrus"
-
-	"go.xrstf.de/rudi-lda/pkg/util"
 )
 
 type Message struct {
@@ -34,12 +32,12 @@ func (m *Message) LogFields() logrus.Fields {
 	}
 
 	if from := m.GetFrom(); from != nil {
-		fields["fromName"] = util.DecodeQuotedPrintable(from.Name)
+		fields["fromName"] = decodeQuotedPrintable(from.Name)
 		fields["fromAddress"] = from.Address
 	}
 
 	if to := m.GetTo(); to != nil {
-		fields["toName"] = util.DecodeQuotedPrintable(to.Name)
+		fields["toName"] = decodeQuotedPrintable(to.Name)
 		fields["toAddress"] = to.Address
 	}
 
@@ -73,7 +71,7 @@ func (m *Message) GetDate() (time.Time, error) {
 }
 
 func (m *Message) GetSubject() string {
-	return util.DecodeQuotedPrintable(m.Header.Get("Subject"))
+	return decodeQuotedPrintable(m.Header.Get("Subject"))
 }
 
 func (m *Message) GetFrom() *mail.Address {
@@ -153,7 +151,7 @@ func (m *Message) SubjectContainsAnyOf(needles ...string) bool {
 }
 
 func (m *Message) HeaderContainsAnyOf(header string, needles ...string) bool {
-	return stringContainsAnyOf(util.DecodeQuotedPrintable(m.Header.Get(header)), needles...)
+	return stringContainsAnyOf(decodeQuotedPrintable(m.Header.Get(header)), needles...)
 }
 
 func stringContainsAnyOf(haystack string, needles ...string) bool {
@@ -175,7 +173,7 @@ func (m *Message) SubjectMatchesAnyOf(needles ...string) bool {
 }
 
 func (m *Message) HeaderMatchesAnyOf(header string, needles ...string) bool {
-	return stringMatchesAnyOf(util.DecodeQuotedPrintable(m.Header.Get(header)), needles...)
+	return stringMatchesAnyOf(decodeQuotedPrintable(m.Header.Get(header)), needles...)
 }
 
 func stringMatchesAnyOf(haystack string, needles ...string) bool {
@@ -203,7 +201,7 @@ func (m *Message) IsHeaderName(header string, names ...string) bool {
 	}
 
 	for _, name := range names {
-		if strings.EqualFold(util.DecodeQuotedPrintable(list[0].Name), name) {
+		if strings.EqualFold(decodeQuotedPrintable(list[0].Name), name) {
 			return true
 		}
 	}
@@ -326,4 +324,11 @@ func (m *Message) GetMultipartBody(contentType string) (string, error) {
 	}
 
 	return "", nil
+}
+
+func decodeQuotedPrintable(s string) string {
+	dec := new(mime.WordDecoder)
+	b, _ := dec.DecodeHeader(s)
+
+	return string(b)
 }

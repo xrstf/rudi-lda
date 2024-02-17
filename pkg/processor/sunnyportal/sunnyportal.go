@@ -41,22 +41,26 @@ func New(datadir string) *Proc {
 	}
 }
 
-func (p *Proc) Matches(_ context.Context, _ logrus.FieldLogger, msg *email.Message) (bool, error) {
-	return subjectRegex.MatchString(msg.GetSubject()), nil
+func (*Proc) Name() string {
+	return "sunnyportal"
 }
 
-func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.Message, _ *metrics.Metrics) error {
+func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.Message, _ *metrics.Metrics) (consumed bool, updated *email.Message, err error) {
+	if !subjectRegex.MatchString(msg.GetSubject()) {
+		return false, msg, nil
+	}
+
 	logger.Info("Handling sunnyportal.")
 
 	info, err := parseMessage(msg)
 	if err != nil {
-		return err
+		return false, msg, err
 	}
 
 	logFile := filepath.Join(p.datadir, "sunnyportal.csv")
 	f, err := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 	if err != nil {
-		return fmt.Errorf("failed to open data file: %w", err)
+		return false, msg, fmt.Errorf("failed to open data file: %w", err)
 	}
 	defer f.Close()
 
@@ -68,7 +72,7 @@ func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.
 		info.co2,
 	))
 
-	return nil
+	return true, nil, nil
 }
 
 type data struct {

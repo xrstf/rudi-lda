@@ -4,10 +4,10 @@
 package test
 
 import (
+	"mime"
 	"net/mail"
 
 	"go.xrstf.de/rudi-lda/pkg/email"
-	"go.xrstf.de/rudi-lda/pkg/util"
 )
 
 type Builder struct {
@@ -28,7 +28,7 @@ func (b *Builder) WithRawHeader(key, value string) *Builder {
 }
 
 func (b *Builder) WithHeader(key, value string) *Builder {
-	return b.WithRawHeader(key, util.EncodeQuotedPrintable(value))
+	return b.WithRawHeader(key, encodeQuotedPrintable(value))
 }
 
 func (b *Builder) WithSubject(subject string) *Builder {
@@ -57,4 +57,8 @@ func (b *Builder) Build() *email.Message {
 		Header: b.headers,
 		Body:   b.body,
 	}
+}
+
+func encodeQuotedPrintable(s string) string {
+	return mime.QEncoding.Encode("utf-8", s)
 }

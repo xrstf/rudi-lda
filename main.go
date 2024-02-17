@@ -19,9 +19,9 @@ var (
 )
 
 func main() {
-	app := commandline.NewApp(BuildTag, BuildCommit, BuildDate)
+	command := commandline.New(BuildTag, BuildCommit, BuildDate)
 
-	if err := app.Run(context.Background(), os.Args); err != nil {
+	if err := command.Run(context.Background(), os.Args); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}

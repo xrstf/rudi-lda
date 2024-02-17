@@ -5,9 +5,7 @@ package antispam
 
 import (
 	"context"
-	"log"
-	"os"
-	"path/filepath"
+	"fmt"
 
 	"github.com/sirupsen/logrus"
 
@@ -31,39 +29,42 @@ func New(scriptFile string, spamDir string) *Proc {
 	}
 }
 
-func (p *Proc) Matches(ctx context.Context, logger logrus.FieldLogger, msg *email.Message) (bool, error) {
+func (*Proc) Name() string {
+	return "antispam"
+}
+
+func (p *Proc) Process(ctx context.Context, logger logrus.FieldLogger, msg *email.Message, metrics *metrics.Metrics) (consumed bool, updated *email.Message, err error) {
 	result, err := spam.Check(ctx, p.scriptFile, msg)
 	if err != nil {
-		return false, err
+		return false, nil, err
 	}
 
 	if result == nil {
-		return false, nil
+		return false, msg, nil
 	}
+
+	msg.Header["X-Rudi-LDA-Antispam"] = []string{
+		fmt.Sprintf("status:%s,rule:%s", result.Status, result.Rule),
+	}
+
+	logger = logger.WithField("rule", result.Rule)
 
 	if result.Status == spam.Spam {
-		p.matchedRule = result.Rule
-		logger.WithField("rule", result.Rule).Info("Dropping spam.")
-		return true, nil
+		logger.Info("Dropping spam.")
+
+		metrics.Discarded++
+		metrics.SpamRules[p.matchedRule]++
+
+		if _, err := util.WriteEmail(p.spamDir, msg); err != nil {
+			logger.WithError(err).Error("Failed to backup spam e-mail: %w", err)
+			// if we cannot backup spam, we must deliver it to the inbodx to prevent data loss
+			return false, msg, nil
+		}
+
+		return true, nil, nil
 	}
 
-	return false, nil
-}
+	logger.WithField("status", result.Status).Debug("Passed spamtest.")
 
-func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.Message, metrics *metrics.Metrics) error {
-	metrics.Discarded++
-	metrics.SpamRules[p.matchedRule]++
-
-	if err := os.MkdirAll(p.spamDir, 0775); err != nil {
-		log.Printf("Error: cannot create spam directory: %v", err)
-		return nil
-	}
-
-	filename := filepath.Join(p.spamDir, util.Filename())
-
-	if err := os.WriteFile(filename, msg.Raw(), 0600); err != nil {
-		log.Printf("Error: failed to write file: %v", err)
-	}
-
-	return nil
+	return false, msg, nil
 }
