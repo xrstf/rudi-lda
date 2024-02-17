@@ -10,28 +10,15 @@ builds:
     ldflags:
       - '-s -w -X main.BuildTag={{.Version}} -X main.BuildCommit={{.Commit}} -X main.BuildDate={{.Date}}'
     goos:
-      - darwin
       - freebsd
       - linux
-      - windows
     goarch:
       - amd64
-      - '386'
       - arm64
-    ignore:
-      - goos: darwin
-        goarch: '386'
-      - goos: freebsd
-        goarch: '386'
-      - goos: windows
-        goarch: '386'
 archives:
   - format: tar.gz
-    name_template: 'rudi_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    name_template: 'rudi-lda_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
     wrap_in_directory: true
     strip_parent_binary_folder: true
-    format_overrides:
-      - goos: windows
-        format: zip
 checksum:
   disable: true
