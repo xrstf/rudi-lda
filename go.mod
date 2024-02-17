@@ -5,6 +5,7 @@ go 1.21
 toolchain go1.21.0
 
 require (
+	github.com/google/go-cmp v0.6.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/urfave/cli/v3 v3.0.0-alpha9
 	go.xrstf.de/rudi v0.7.1-0.20240201200935-90d797505ff2

@@ -17,6 +17,7 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"go.xrstf.de/rudi-lda/pkg/email"
+	"go.xrstf.de/rudi-lda/pkg/fs"
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 )
 
@@ -55,20 +56,22 @@ func (p *Proc) Process(_ context.Context, logger logrus.FieldLogger, msg *email.
 	}
 
 	logFile := filepath.Join(p.datadir, "rentablo.csv")
-	f, err := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	f, err := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, fs.FilePermissions)
 	if err != nil {
 		return false, msg, fmt.Errorf("failed to open data file: %w", err)
 	}
 	defer f.Close()
 
-	f.WriteString(fmt.Sprintf(
+	if _, err := f.WriteString(fmt.Sprintf(
 		"%s;%.2F;%.2F;%.2F;%.2F\n",
 		info.time.Format(time.RFC3339),
 		info.performance1Week,
 		info.performance1Month,
 		info.performance6Months,
 		info.performance1Year,
-	))
+	)); err != nil {
+		return false, msg, fmt.Errorf("failed to append data: %w", err)
+	}
 
 	return true, nil, nil
 }

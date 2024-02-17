@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/sirupsen/logrus"
+
 	"go.xrstf.de/rudi-lda/pkg/fs"
 )
 

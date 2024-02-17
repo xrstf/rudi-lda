@@ -4,6 +4,8 @@
 package rudilib
 
 import (
+	"bytes"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"net/mail"
@@ -18,7 +20,7 @@ var Functions = rudi.Functions{
 	"domain":   rudi.NewFunctionBuilder(domainFunc).WithDescription("returns the domain portion of the address' email").Build(),
 	"user":     rudi.NewFunctionBuilder(userFunc).WithDescription("returns the user portion of the address' email").Build(),
 	"matches?": rudi.NewFunctionBuilder(matchesFunc).WithDescription("returns true if the first value matches any of the given expressions").Build(),
-	"header":   rudi.NewFunctionBuilder(headerFunc).WithDescription("returns the first value for the given header or an empty string if the header is not set").Build(),
+	"header":   rudi.NewFunctionBuilder(docHeaderFunc, headerFunc).WithDescription("returns the first value for the given header or an empty string if the header is not set").Build(),
 }
 
 func domainFunc(val any) (any, error) {
@@ -35,6 +37,10 @@ func domainFunc(val any) (any, error) {
 }
 
 func userFunc(val any) (any, error) {
+	if thing, ok := val.(map[string]any); ok {
+		val = thing["address"]
+	}
+
 	if s, ok := val.(string); ok {
 		parts := strings.Split(s, "@")
 		return parts[0], nil
@@ -82,10 +88,26 @@ func stringSetToAnys(s sets.Set[string]) []any {
 	return result
 }
 
-func headerFunc(msg any, name string) (any, error) {
+func docHeaderFunc(ctx rudi.Context, name string) (any, error) {
+	return headerFunc(name, ctx.GetDocument().Data())
+}
+
+func headerFunc(name string, msg any) (any, error) {
 	if thing, ok := msg.(map[string]any); ok {
-		if headers, ok := thing["headers"].(mail.Header); ok {
-			return headers.Get(name), nil
+		if headers, ok := thing["headers"].(map[string]any); ok {
+			// Until Rudi supports Go structs and custom maps, we have to
+			// convert back and forth between JSON...
+			var buf bytes.Buffer
+			if err := json.NewEncoder(&buf).Encode(headers); err != nil {
+				return nil, errors.New("cannot deal with provided value")
+			}
+
+			var mimeHeaders mail.Header
+			if err := json.NewDecoder(&buf).Decode(&mimeHeaders); err != nil {
+				return nil, errors.New("cannot deal with provided value")
+			}
+
+			return mimeHeaders.Get(name), nil
 		}
 	}
 
