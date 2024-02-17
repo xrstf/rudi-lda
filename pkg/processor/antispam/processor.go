@@ -18,8 +18,6 @@ import (
 type Proc struct {
 	scriptFile string
 	backupDir  string
-
-	matchedRule string
 }
 
 func New(scriptFile string, backupDir string) *Proc {
@@ -53,7 +51,7 @@ func (p *Proc) Process(ctx context.Context, logger logrus.FieldLogger, msg *emai
 		logger.Info("Dropping spam.")
 
 		metrics.Discarded++
-		metrics.SpamRules[p.matchedRule]++
+		metrics.SpamRules[result.Rule]++
 
 		if p.backupDir != "" {
 			if _, err := fs.WriteEmail(p.backupDir, msg); err != nil {

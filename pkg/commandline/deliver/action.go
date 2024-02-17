@@ -19,6 +19,7 @@ import (
 	"go.xrstf.de/rudi-lda/pkg/metrics"
 	"go.xrstf.de/rudi-lda/pkg/processor"
 	"go.xrstf.de/rudi-lda/pkg/processor/antispam"
+	"go.xrstf.de/rudi-lda/pkg/processor/ldaheaders"
 	"go.xrstf.de/rudi-lda/pkg/processor/maildir"
 	"go.xrstf.de/rudi-lda/pkg/processor/rentablo"
 	"go.xrstf.de/rudi-lda/pkg/processor/sunnyportal"
@@ -62,7 +63,7 @@ func action(ctx context.Context, opt *Options) error {
 	metricsData.Valid++
 
 	// process it
-	logger = logger.WithFields(msg.LogFields()).WithField("destination", opt.DestAddress)
+	logger = logger.WithFields(msg.LogFields()).WithField("destination", opt.DestUser)
 	processors := getProcessors(opt)
 
 	if newMsg, err := processor.Pipeline(ctx, logger, processors, msg, metricsData); err != nil {
@@ -82,6 +83,9 @@ func getProcessors(opt *Options) []processor.Processor {
 	userMaildir := getDestinationMaildir(opt)
 
 	var processors []processor.Processor
+
+	// add common headers
+	processors = append(processors, ldaheaders.New(opt.DestUser))
 
 	if opt.Rentablo {
 		processors = append(processors, rentablo.New(opt.DataDir))
@@ -107,7 +111,7 @@ func getProcessors(opt *Options) []processor.Processor {
 }
 
 func getDestinationMaildir(opt *Options) string {
-	parts := strings.Split(opt.DestAddress, "@")
+	parts := strings.Split(opt.DestUser, "@")
 
 	return filepath.Join(opt.MailDir, parts[0])
 }

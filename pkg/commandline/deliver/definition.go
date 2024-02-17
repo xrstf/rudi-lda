@@ -15,7 +15,7 @@ type Options struct {
 	Common *options.CommonOptions
 
 	FromAddress  string
-	DestAddress  string
+	DestUser     string
 	SpamScript   string
 	FolderScript string
 	BackupSpam   bool
@@ -58,8 +58,8 @@ func Command(commonOpt *options.CommonOptions) *cli.Command {
 			&cli.StringFlag{
 				Name:        "destination",
 				Aliases:     []string{"d"},
-				Usage:       "(required) destination address",
-				Destination: &opt.DestAddress,
+				Usage:       "(required) destination user",
+				Destination: &opt.DestUser,
 				Required:    true,
 			},
 			&cli.StringFlag{

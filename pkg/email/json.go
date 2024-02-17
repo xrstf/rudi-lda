@@ -14,7 +14,7 @@ type JSONMessage struct {
 	From        map[string]any `json:"from"`
 	To          map[string]any `json:"to"`
 	ReplyTo     map[string]any `json:"replyTo"`
-	DeliveredTo map[string]any `json:"deliveredTo"`
+	DeliveredTo string         `json:"deliveredTo"`
 	Subject     string         `json:"subject"`
 	Date        time.Time      `json:"date"`
 	Body        string         `json:"body"`
@@ -41,7 +41,7 @@ func (m *Message) ToJSON() (any, error) {
 	rm.To = addressToJSON(m.GetTo())
 	rm.Subject = m.GetSubject()
 	rm.ReplyTo = addressToJSON(m.GetReplyTo())
-	rm.DeliveredTo = addressToJSON(m.GetDeliveredTo())
+	rm.DeliveredTo = m.GetDeliveredTo()
 	rm.Body = m.Body
 	rm.Headers = m.Header
 

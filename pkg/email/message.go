@@ -12,7 +12,6 @@ import (
 	"mime/multipart"
 	"mime/quotedprintable"
 	"net/mail"
-	"net/textproto"
 	"strings"
 	"time"
 
@@ -100,27 +99,8 @@ func (m *Message) GetReplyTo() *mail.Address {
 	return m.getAddress("Reply-To")
 }
 
-func (m *Message) GetDeliveredTo() *mail.Address {
-	// this header is (on my server) set to the username first
-	// and Go's AddressList() function does not like that, so
-	// we must hand-parse the value
-	header := textproto.MIMEHeader(m.Header)
-
-	values, exist := header["Delivered-To"]
-	if !exist {
-		return nil
-	}
-
-	for _, value := range values {
-		parsed, err := mail.ParseAddress(value)
-		if err != nil {
-			continue
-		}
-
-		return parsed
-	}
-
-	return nil
+func (m *Message) GetDeliveredTo() string {
+	return m.Header.Get("Delivered-To")
 }
 
 func (m *Message) getAddress(header string) *mail.Address {
