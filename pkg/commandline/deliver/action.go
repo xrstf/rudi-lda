@@ -92,7 +92,12 @@ func getProcessors(opt *Options) []processor.Processor {
 	}
 
 	if opt.SpamScript != "" {
-		processors = append(processors, antispam.New(opt.SpamScript, filepath.Join(opt.DataDir, "spam")))
+		var backupDir string
+		if opt.BackupSpam {
+			backupDir = filepath.Join(opt.DataDir, "spam")
+		}
+
+		processors = append(processors, antispam.New(opt.SpamScript, backupDir))
 	}
 
 	// maildir will always match any e-mail

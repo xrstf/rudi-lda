@@ -17,15 +17,15 @@ import (
 
 type Proc struct {
 	scriptFile string
-	spamDir    string
+	backupDir  string
 
 	matchedRule string
 }
 
-func New(scriptFile string, spamDir string) *Proc {
+func New(scriptFile string, backupDir string) *Proc {
 	return &Proc{
 		scriptFile: scriptFile,
-		spamDir:    spamDir,
+		backupDir:  backupDir,
 	}
 }
 
@@ -55,10 +55,12 @@ func (p *Proc) Process(ctx context.Context, logger logrus.FieldLogger, msg *emai
 		metrics.Discarded++
 		metrics.SpamRules[p.matchedRule]++
 
-		if _, err := util.WriteEmail(p.spamDir, msg); err != nil {
-			logger.WithError(err).Error("Failed to backup spam e-mail: %w", err)
-			// if we cannot backup spam, we must deliver it to the inbodx to prevent data loss
-			return false, msg, nil
+		if p.backupDir != "" {
+			if _, err := util.WriteEmail(p.backupDir, msg); err != nil {
+				logger.WithError(err).Error("Failed to backup spam e-mail: %w", err)
+				// if we cannot backup spam, we must deliver it to the inbodx to prevent data loss
+				return false, msg, nil
+			}
 		}
 
 		return true, nil, nil

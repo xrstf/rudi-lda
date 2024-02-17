@@ -18,6 +18,7 @@ type Options struct {
 	DestAddress  string
 	SpamScript   string
 	FolderScript string
+	BackupSpam   bool
 	MailDir      string
 	DataDir      string
 	Rentablo     bool
@@ -84,6 +85,12 @@ func Command(commonOpt *options.CommonOptions) *cli.Command {
 				Usage:       "enable the sunnyportal.de processor",
 				Sources:     cli.EnvVars("RUDILDA_SUNNYPORTAL"),
 				Destination: &opt.Sunnyportal,
+			},
+			&cli.BoolFlag{
+				Name:        "backup-spam",
+				Usage:       "write spam e-mails to $datadir/spam",
+				Sources:     cli.EnvVars("RUDILDA_BACKUP_SPAM"),
+				Destination: &opt.BackupSpam,
 			},
 		},
 		Action: func(ctx context.Context, _ *cli.Command) error {
