@@ -43,6 +43,8 @@ func (p *Proc) Process(ctx context.Context, logger logrus.FieldLogger, msg *emai
 		// continue, i.e. deliver into root maildir folder (inbox)
 	}
 
+	logger.WithField("folder", folder).Info("Delivering.")
+
 	if err := md.Deliver(folder, msg); err != nil {
 		return false, nil, fmt.Errorf("failed to deliver into maildir: %w", err)
 	}
