@@ -65,10 +65,9 @@ func (m *Message) GetDate() (time.Time, error) {
 	date := m.Header.Get("Date")
 	formats := []string{
 		time.RFC822, time.RFC822Z,
-		time.RFC1123, time.RFC1123Z,
-		"Mon, 02 Jan 2006 15:04:05 MST (-0700)", "Mon, 02 Jan 2006 15:04:05 -0700 (MST)",
-		"02 Jan 06 15:04:05 MST", "02 Jan 06 15:04:05 -0700",
-		"02 Jan 2006 15:04:05 MST", "02 Jan 2006 15:04:05 -0700",
+		// time.RFC1123 but with _2 instead of 02
+		"Mon, _2 Jan 2006 15:04:05 MST", "Mon, _2 Jan 2006 15:04:05 -0700",
+		"Mon, _2 Jan 2006 15:04:05 MST (-0700)", "Mon, _2 Jan 2006 15:04:05 -0700 (MST)",
 		"_2 Jan 06 15:04:05 MST", "_2 Jan 06 15:04:05 -0700",
 		"_2 Jan 2006 15:04:05 MST", "_2 Jan 2006 15:04:05 -0700",
 	}
